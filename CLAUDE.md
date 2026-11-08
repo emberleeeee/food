@@ -26,4 +26,5 @@ Personal recipe and meal planner for Emberlee, hosted at the root of food.emilyb
 ## Storage
 - claude.ai artifact: per-user state in the artifact's `db` (`data/users/<id>/planner`), localStorage fallback.
 - Self-hosted: localStorage only (key `pantry-planner`). Recipes the user writes or imports live there, not in this repo.
+- Badges (`S.badges`, per recipe id; defaults come from the recipe's source, none for library or pantry-ready recipes) and header images (`S.images`, a URL or a photo shrunk to a 960px JPEG data URL) are user state too. Photos count against browser storage, so links are lighter.
 - `site/import.php` fetches public recipe pages for "Import from link" (SSRF-guarded, same-site referer only).

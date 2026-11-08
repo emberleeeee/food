@@ -102,6 +102,24 @@ select.fsel,.field select.fsel{appearance:none;-webkit-appearance:none;border:1.
 .p-src{background:var(--line2);color:var(--muted)}
 .p-gen{background:var(--accent);color:#fff}
 .p-fave{background:var(--accent);color:#fff}
+/* your own badges */
+.badges{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.pill .x{border:0;background:none;color:inherit;opacity:.55;padding:0 0 0 2px;font-size:12px;line-height:1;cursor:pointer}
+.pill .x:hover{opacity:1}
+.addbadge{border:1.5px dashed var(--line);background:transparent;color:var(--muted);font-size:10.5px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;padding:2px 10px;border-radius:100px}
+.addbadge:hover{border-color:var(--ink);color:var(--ink)}
+.badgein{font:inherit;font-size:12px;border:1.5px solid var(--ink);border-radius:100px;padding:2px 10px;width:150px;background:var(--card);color:var(--ink)}
+.bmgr{display:grid;grid-template-columns:1fr auto auto;gap:8px 10px;align-items:center;margin-top:14px}
+.bmgr input{font:inherit;font-size:14px;border:1.5px solid var(--line);border-radius:10px;padding:7px 10px;background:var(--card);color:var(--ink)}
+.bmgr .ct{font-size:12.5px;color:var(--muted);white-space:nowrap}
+/* header images */
+.rimg{display:block;width:calc(100% + 44px);margin:-22px -22px 2px;aspect-ratio:16/9;object-fit:cover;border-radius:16px 16px 0 0;background:var(--line2)}
+.rcard.has-img .fav{background:rgba(255,255,255,.92);color:var(--muted)}
+.rcard.has-img .fav.on{color:var(--accent)}
+.mimg{display:block;width:calc(100% + 60px);margin:-28px -30px 18px;aspect-ratio:21/9;object-fit:cover;border-radius:18px 18px 0 0;background:var(--line2)}
+.modal.has-img .close{background:rgba(255,255,255,.92);border-radius:50%;width:34px;height:34px;display:grid;place-items:center}
+.imgpick{display:grid;gap:14px;margin-top:14px}
+.imgpick .prev{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:12px;background:var(--line2);border:1px solid var(--line)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px}
 .rcard{padding:22px;display:flex;flex-direction:column;gap:10px;cursor:pointer;transition:transform .2s,box-shadow .2s}
@@ -285,9 +303,11 @@ ol.steps li{margin-bottom:8px;font-size:14px}
         <input class="search" id="q" placeholder="Search recipes or ingredients">
         <select class="fsel" id="fMeal" aria-label="Meal"><option value="">All meals</option><option value="Breakfast">Breakfast</option><option value="Lunch">Lunch</option><option value="Dinner">Dinner</option><option value="Sides">Sides &amp; snacks</option><option value="Sweets">Desserts &amp; drinks</option></select>
         <select class="fsel" id="fDay" aria-label="Carbs"><option value="">Any carbs</option><option value="Bike">Higher carb</option><option value="Strength">Lower carb</option></select>
-        <select class="fsel" id="fSrc" aria-label="Source"><option value="">All sources</option><option value="Pantry-ready">Pantry-ready</option><option value="Your library">Your library</option><option value="My recipes">My recipes</option><option value="Slow cooker">Slow cooker</option><option value="Generated">Generated</option></select>
+        <select class="fsel" id="fSrc" aria-label="Source"><option value="">All sources</option><option value="Your library">Your library</option><option value="My recipes">My recipes</option><option value="Slow cooker">Slow cooker</option><option value="Generated">Generated</option></select>
         <select class="fsel" id="fReady" aria-label="Readiness"><option value="0">Any readiness</option><option value="90">Ready now</option><option value="75">1–2 items away</option></select>
+        <select class="fsel" id="fBadge" aria-label="Badge"><option value="">All badges</option></select>
         <button class="btn sm" id="fFave" aria-pressed="false">♥ Favorites</button>
+        <button class="btn sm ghost" id="manageBadges">Edit badges</button>
         <span class="spacer"></span>
         <label class="field" style="flex-direction:row;align-items:center;gap:8px">Sort
           <select class="fsel" id="sort"><option value="match">Best pantry match</option><option value="p">Most protein</option><option value="density">Protein per calorie</option><option value="time">Quickest</option></select></label>
@@ -390,7 +410,7 @@ function keyFor(name){
 }
 
 /* ---------- state ---------- */
-let S={status:{},extra:[],removed:[],plan:{},out:{"2d":true,"6d":true},saved:[],people:1,shopChecked:{},edits:{},fav:{}};
+let S={status:{},extra:[],removed:[],plan:{},out:{"2d":true,"6d":true},saved:[],people:1,shopChecked:{},edits:{},fav:{},badges:{},images:{}};
 function loadLocal(){try{const j=localStorage.getItem("pantry-planner");if(j)S=Object.assign(S,JSON.parse(j));}catch(e){}}
 let dbDoc=null, saveTimer=null, saving=false, dirty=false;
 function save(){
@@ -509,12 +529,96 @@ function servLabel(r){return r.servings?r.servings+(r.servings===1?" serving":" 
 function timeLabel(r){return r.timeText||(r.time?r.time+" min prep":"");}
 function courseLabel(r){return r.meal.join(" / ");}
 function leanPill(r){return LEAN_LABEL[r.lean]?`<span class="pill p-${r.lean.toLowerCase()}">${LEAN_LABEL[r.lean]}</span>`:"";}
-function srcPill(r){if(r.src==="Your library")return ""; return `<span class="pill ${r.src==="Generated"||r.src==="My recipes"?"p-gen":"p-src"}">${esc(r.src)}</span>`;}
+/* Badges: each recipe starts with its source as a badge (none for your library or the pantry-ready set).
+   Once you add, rename or remove any, your list for that recipe is kept in S.badges and wins. */
+const AUTO_BADGES=["Slow cooker","My recipes","Generated"];
+function defaultBadges(r){return AUTO_BADGES.includes(r.src)?[r.src]:[];}
+function badgesOf(r){const b=(S.badges||{})[r.id]; return Array.isArray(b)?b:defaultBadges(r);}
+function setBadges(id,list){
+  const r=byId(id); if(!r) return; S.badges=S.badges||{};
+  const clean=[...new Set(list.map(b=>String(b).trim().replace(/\s+/g," ")).filter(Boolean))].slice(0,12);
+  if(clean.join("\u0001")===defaultBadges(r).join("\u0001")) delete S.badges[id]; else S.badges[id]=clean;
+}
+function allBadges(){const m=new Map(); allRecipes().forEach(r=>badgesOf(r).forEach(b=>m.set(b,(m.get(b)||0)+1))); return [...m].sort((a,b)=>a[0].localeCompare(b[0]));}
+function badgeCls(b){return b==="Generated"||b==="My recipes"?"p-gen":"p-src";}
+function badgePills(r){return badgesOf(r).map(b=>`<span class="pill ${badgeCls(b)}">${esc(b)}</span>`).join("");}
+function badgeEditor(r){
+  return `<div class="badges" id="badgeRow" data-bfor="${r.id}">${badgesOf(r).map(b=>`<span class="pill ${badgeCls(b)}">${esc(b)}<button class="x" data-bdel="${esc(b)}" title="Remove this badge" aria-label="Remove badge ${esc(b)}">×</button></span>`).join("")}<button class="addbadge" data-badd title="Add a badge">+ Badge</button></div>`;
+}
+function startBadgeInput(id){
+  const row=$("#badgeRow"); if(!row||row.querySelector(".badgein")) return;
+  const r=byId(id), have=badgesOf(r), opts=allBadges().map(([b])=>b).filter(b=>!have.includes(b));
+  const btn=row.querySelector("[data-badd]");
+  btn.insertAdjacentHTML("beforebegin",`<input class="badgein" list="badgeList" placeholder="New badge, Enter to add" maxlength="30"><datalist id="badgeList">${opts.map(b=>`<option value="${esc(b)}">`).join("")}</datalist>`);
+  btn.style.display="none"; const inp=row.querySelector(".badgein"); inp.focus();
+  let done=false; const finish=add=>{ if(done) return; done=true; const v=inp.value.trim();
+    if(add&&v){setBadges(id,[...badgesOf(byId(id)),v]); save(); render();}
+    $("#badgeRow").outerHTML=badgeEditor(byId(id)); };
+  inp.addEventListener("keydown",ev=>{ if(ev.key==="Enter"){ev.preventDefault();finish(true);} else if(ev.key==="Escape"){ev.preventDefault();ev.stopPropagation();finish(false);} });
+  inp.addEventListener("blur",()=>finish(true));
+}
+function openBadgeManager(){
+  const list=allBadges();
+  openModal(`<button class="close" data-close>×</button><h2>Your badges</h2>
+   <p class="note">Rename a badge to change it on every recipe that has it, or remove it everywhere. Add badges to a single recipe from its page.</p>
+   ${list.length?`<div class="bmgr">${list.map(([b,n])=>`<input value="${esc(b)}" data-bren="${esc(b)}" aria-label="Rename ${esc(b)}"><span class="ct">${n} recipe${n===1?"":"s"}</span><button class="btn sm ghost" data-bkill="${esc(b)}">Remove</button>`).join("")}</div>`:`<div class="empty" style="margin-top:14px">No badges yet. Open any recipe and use + Badge.</div>`}
+   <div class="row" style="margin-top:20px"><button class="btn" data-close>Done</button></div>`);
+}
+function renameBadge(from,to){
+  to=to.trim().replace(/\s+/g," "); if(!to||to===from) return false;
+  allRecipes().forEach(r=>{const b=badgesOf(r); if(b.includes(from)) setBadges(r.id,b.map(x=>x===from?to:x));});
+  if(F.badge===from) F.badge=to; return true;
+}
+function removeBadge(name){allRecipes().forEach(r=>{const b=badgesOf(r); if(b.includes(name)) setBadges(r.id,b.filter(x=>x!==name));}); if(F.badge===name) F.badge="";}
+function syncBadgeFilter(){
+  const el=$("#fBadge"); if(!el) return; const list=allBadges();
+  if(F.badge&&!list.some(([b])=>b===F.badge)) F.badge="";
+  el.innerHTML=`<option value="">All badges</option>`+list.map(([b])=>`<option value="${esc(b)}"${b===F.badge?" selected":""}>${esc(b)}</option>`).join("");
+  el.classList.toggle("set",!!F.badge); el.style.display=list.length?"":"none";
+}
+
+/* Header images: a link you paste, or a photo from your device shrunk to keep browser storage small. */
+function imgOf(r){const u=(S.images||{})[r.id]; return typeof u==="string"&&/^(https?:|data:image\/)/.test(u)?u:"";}
+function storeFits(){try{localStorage.setItem("pantry-planner",JSON.stringify(S));return true;}catch(e){return false;}}
+function setImage(id,url){
+  S.images=S.images||{}; const prev=S.images[id];
+  if(url) S.images[id]=url; else delete S.images[id];
+  if(url&&url.startsWith("data:")&&!storeFits()){ if(prev) S.images[id]=prev; else delete S.images[id];
+    toast("Browser storage is full. Use an image link instead, or remove some photos."); return false; }
+  save(); return true;
+}
+function shrinkPhoto(file){
+  return new Promise((ok,fail)=>{
+    if(!file||!/^image\//.test(file.type)){fail(new Error("not an image"));return;}
+    const img=new Image(), url=URL.createObjectURL(file);
+    img.onload=()=>{ const W=960, s=Math.min(1,W/img.naturalWidth), c=document.createElement("canvas");
+      c.width=Math.round(img.naturalWidth*s); c.height=Math.round(img.naturalHeight*s);
+      c.getContext("2d").drawImage(img,0,0,c.width,c.height); URL.revokeObjectURL(url); ok(c.toDataURL("image/jpeg",0.72)); };
+    img.onerror=()=>{URL.revokeObjectURL(url); fail(new Error("unreadable"));};
+    img.src=url;
+  });
+}
+let imgDraft=null;
+function openImagePicker(id){
+  const r=byId(id); if(!r) return; imgDraft=imgOf(r);
+  openModal(`<button class="close" data-close>×</button><h2>Header image</h2>
+   <p class="note">Shown on the recipe card and at the top of the recipe. It's saved in this browser.</p>
+   <div class="imgpick">
+     <img class="prev" id="imPrev" alt="" ${imgDraft?`src="${esc(imgDraft)}"`:'style="visibility:hidden"'}>
+     <label class="field">Upload a photo<input type="file" id="imFile" accept="image/*"></label>
+     <label class="field">Or paste an image link<input id="imUrl" type="url" placeholder="https://…/photo.jpg" value="${imgDraft&&!imgDraft.startsWith("data:")?esc(imgDraft):""}"></label>
+   </div>
+   <div class="row" style="margin-top:20px"><button class="btn primary" data-imgsave="${r.id}">Save image</button>${imgOf(r)?`<button class="btn ghost" data-imgdel="${r.id}">Remove image</button>`:""}<span class="spacer"></span><button class="btn" data-imgback="${r.id}">Cancel</button></div>`);
+  const prev=$("#imPrev"), show=u=>{imgDraft=u; if(u){prev.src=u;prev.style.visibility="";} else prev.style.visibility="hidden";};
+  prev.onerror=()=>{prev.style.visibility="hidden"; if(imgDraft&&!imgDraft.startsWith("data:")) toast("That link didn't load as an image");};
+  $("#imFile").onchange=async e=>{try{show(await shrinkPhoto(e.target.files[0])); $("#imUrl").value="";}catch(err){toast("That file isn't an image this browser can read");}};
+  $("#imUrl").oninput=e=>{const v=e.target.value.trim(); show(/^https?:\/\//.test(v)?v:"");};
+}
 const HEART='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.2-9.4C1.7 7.9 3.9 4.5 7.3 4.5c2 0 3.6 1.1 4.7 2.7 1.1-1.6 2.7-2.7 4.7-2.7 3.4 0 5.6 3.4 4.5 6.6-1.7 4.8-9.2 9.4-9.2 9.4Z"/></svg>';
 function barCls(p){return p>=90?"":p>=70?"mid":"low";}
 
 /* ---------- cook view ---------- */
-const F={meal:"",day:"",src:"",ready:0,q:"",sort:"match",fave:false};
+const F={meal:"",day:"",src:"",badge:"",ready:0,q:"",sort:"match",fave:false};
 const MEAL_GROUPS={Sides:["Side","Snack"],Sweets:["Dessert","Drink"]};
 function bindSeg(id,key){
   const el=$(id), sync=()=>el.classList.toggle("set",el.selectedIndex>0);
@@ -528,6 +632,7 @@ function renderCook(){
     if(F.fave&&!isFave(r))return false;
     if(F.day&&r.lean!==F.day)return false;
     if(F.src&&r.src!==F.src)return false;
+    if(F.badge&&!badgesOf(r).includes(F.badge))return false;
     if(F.ready&&e.pct<F.ready)return false;
     if(q&&!(r.name+" "+r.cuisine+" "+r.req.map(i=>i.l).join(" ")).toLowerCase().includes(q))return false;
     return true;});
@@ -539,9 +644,11 @@ function renderCook(){
     const miss=e.need.length?`<span class="n">Need: ${esc([...new Set(e.need.map(n=>n.k==="spices"?"spices":label(n.k)))].slice(0,4).join(", "))}${e.need.length>4?"…":""}</span>`:"";
     const sw=e.swap.length?`<span class="s">Swap: ${esc([...new Set(e.swap.map(s=>s.note))].slice(0,2).join("; "))}</span>`:"";
     const status=!miss&&!sw?`<span style="color:var(--have)">Everything on hand</span>`:[miss,sw].filter(Boolean).join("<br>");
-    return `<div class="card rcard" data-id="${r.id}">
+    const img=imgOf(r);
+    return `<div class="card rcard${img?" has-img":""}" data-id="${r.id}">
+      ${img?`<img class="rimg" src="${esc(img)}" alt="" loading="lazy" onerror="this.style.display='none'">`:""}
       <button class="fav${isFave(r)?" on":""}" data-fav="${r.id}" aria-pressed="${isFave(r)}" title="${isFave(r)?"Remove from favorites":"Add to favorites"}">${HEART}</button>
-      <div class="row" style="gap:6px;padding-right:34px;min-height:22px">${srcPill(r)}${leanPill(r)}</div>
+      <div class="row" style="gap:6px;padding-right:${img?0:34}px;min-height:22px">${badgePills(r)}${leanPill(r)}</div>
       <h3>${esc(r.name)}</h3>
       <div class="macros">${r.p!=null?`<span><b>${r.p}g</b> protein</span>${r.kcal!=null?`<span><b>${r.kcal}</b> kcal</span>`:""}${r.c!=null?`<span><b>${r.c}g</b> carbs</span>`:""}`:`<span>${esc(courseLabel(r))}</span>`}</div>
       <div class="meta">${[r.method_type,timeLabel(r),servLabel(r)].filter(Boolean).map(esc).join(" · ")}</div>
@@ -573,8 +680,10 @@ function recipeHtml(r,opts={}){
   const stats=r.link?"":`<div class="statbox">${st(r.p,"g","protein")}${st(r.kcal,"","kcal")}${st(r.c,"g","carbs")}${st(r.f,"g","fat")}${st(r.fi,"g","fiber")}<span><b>${e.pct}%</b>on hand</span></div>`;
   const plates=["bike","strength","rest"].map(t=>[t,plateFor(r,t)]).filter(x=>x[1]);
   const plateHtml=r.serve&&Object.keys(r.serve).length?`<h3 style="margin-top:18px">Serving ideas</h3><div class="plate">${plates.map(([t,v])=>`<div><span class="pill p-${t}">${TYPE_LABEL[t]}</span> ${esc(v)}</div>`).join("")}</div>${r.base?`<div class="callout">${esc(r.base)}</div>`:""}`:(r.base?`<div class="callout">${esc(r.base)}</div>`:"");
+  const img=opts.gen?"":imgOf(r);
   return `<button class="close" data-close>×</button>
-   <div class="row" style="gap:6px;margin-bottom:8px">${srcPill(r)}${leanPill(r)}${r.cuisine?`<span class="pill p-src">${esc(r.cuisine)}</span>`:""}</div>
+   ${img?`<img class="mimg" src="${esc(img)}" alt="" onerror="this.style.display='none'">`:""}
+   <div class="row" style="gap:6px;margin-bottom:8px">${opts.gen?badgePills(r):badgeEditor(r)}${leanPill(r)}${r.cuisine?`<span class="pill p-src">${esc(r.cuisine)}</span>`:""}</div>
    <h2>${esc(r.name)}</h2>
    <div class="meta" style="margin-top:4px">${[...[servLabel(r),timeLabel(r),r.cook,r.freezer?"Freezer: "+r.freezer:""].filter(Boolean).map(esc),...(r.site?[`<a href="${esc(r.site)}" target="_blank" rel="noopener">On your recipe site ↗</a>`]:[]),...(r.url&&/^https?:/.test(r.url)?[`<a href="${esc(r.url)}" target="_blank" rel="noopener">Original source ↗</a>`]:[])].join(" · ")}</div>
    ${stats}
@@ -587,12 +696,11 @@ function recipeHtml(r,opts={}){
    </div>
    <div class="row" style="margin-top:20px">
      ${opts.gen?`<button class="btn primary" data-save>Save to my recipes</button><button class="btn" data-regen>Try another</button>`:`<button class="btn primary" data-addplan="${r.id}">Add to plan</button>`}
-     <button class="btn" data-copy="${opts.gen?"__gen":r.id}">Copy for Notion</button>
-     ${opts.gen?"":`<button class="btn" data-link="${r.id}" title="${esc(rUrl(r))}">Copy link</button><button class="fav${isFave(r)?" on":""}" data-fav="${r.id}" aria-pressed="${isFave(r)}">${HEART}${isFave(r)?"Favorite":"Add to favorites"}</button>`}
+     ${opts.gen?"":`<button class="btn" data-link="${r.id}" title="${esc(rUrl(r))}">Copy link</button><button class="btn" data-img="${r.id}">${img?"Change image":"Add image"}</button><button class="fav${isFave(r)?" on":""}" data-fav="${r.id}" aria-pressed="${isFave(r)}">${HEART}${isFave(r)?"Favorite":"Add to favorites"}</button>`}
      ${opts.gen?"":`<span class="spacer"></span>${r.edited?`<button class="btn ghost" data-revert="${r.id}" title="Undo your edits and go back to the original">Revert to original</button>`:""}<button class="btn" data-edit="${r.id}">Edit</button>${S.saved.some(x=>x.id===r.id)?`<button class="btn ghost" data-del="${r.id}">Delete</button>`:""}`}
    </div>`;
 }
-function openModal(html){$("#modal").innerHTML=html;$("#scrim").classList.add("on");}
+function openModal(html){const m=$("#modal"); m.innerHTML=html; m.classList.toggle("has-img",!!m.querySelector(":scope > .mimg")); $("#scrim").classList.add("on");}
 function closeModal(){$("#scrim").classList.remove("on"); if(location.hash.startsWith("#recipe-")){try{history.replaceState(null,"","#"+lastView);}catch(e){location.hash=lastView;}}}
 let SLUG={byId:new Map(),byS:new Map(),n:-1};
 function slugify(t){return t.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/&/g," and ").replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,70)||"recipe";}
@@ -1065,7 +1173,7 @@ function showView(v){
   document.querySelectorAll(".view").forEach(s=>s.classList.toggle("on",s.id==="v-"+ok));
   document.querySelectorAll("#tabs a").forEach(a=>a.classList.toggle("on",a.dataset.v===ok));
 }
-function render(){buildSlugs();S.saved.forEach(r=>r.req.forEach(x=>{if(x.buy)D.labels[x.k[0][0]]={l:x.buy,g:"Buy"}; else if(x.lab&&x.k[0]&&!D.labels[x.k[0][0]])D.labels[x.k[0][0]]={l:x.lab,g:"Other"};}));recomputeHave();renderCook();renderPlan();renderShop();renderPantry();renderGenChips();}
+function render(){buildSlugs();S.saved.forEach(r=>r.req.forEach(x=>{if(x.buy)D.labels[x.k[0][0]]={l:x.buy,g:"Buy"}; else if(x.lab&&x.k[0]&&!D.labels[x.k[0][0]])D.labels[x.k[0][0]]={l:x.lab,g:"Other"};}));recomputeHave();syncBadgeFilter();renderCook();renderPlan();renderShop();renderPantry();renderGenChips();}
 
 /* ---------- events ---------- */
 document.addEventListener("click",e=>{
@@ -1080,12 +1188,20 @@ document.addEventListener("click",e=>{
   const cg=t.closest("[data-change]"); if(cg){slotPick(cg.dataset.change);return;}
   const op=t.closest("[data-open]"); if(op){e.preventDefault();openRecipe(op.dataset.open);return;}
   const ap=t.closest("[data-addplan]"); if(ap){openAddToPlan(ap.dataset.addplan);return;}
-  const cp=t.closest("[data-copy]"); if(cp){const id=cp.dataset.copy; const r=id==="__gen"?lastGen:byId(id); if(r) copy(notionMd(r),"Copied, ready to paste into Notion"); return;}
   const dl=t.closest("[data-del]"); if(dl){S.saved=S.saved.filter(r=>r.id!==dl.dataset.del); Object.keys(S.plan).forEach(k=>{if(S.plan[k]===dl.dataset.del)delete S.plan[k];}); save(); closeModal(); render(); toast("Deleted"); return;}
   if(t.closest("[data-save]")&&lastGen){ if(!S.saved.some(r=>r.id===lastGen.id)){S.saved.push(lastGen); save(); render();} toast("Saved. It's in Cook now and the planner."); const b=t.closest("[data-save]"); b.textContent="Saved"; b.disabled=true; return;}
   if(t.closest("[data-regen]")){generate();return;}
   const lk=t.closest("[data-link]"); if(lk){const r=byId(lk.dataset.link); if(r) copy(rUrl(r),"Link to this recipe copied"); return;}
   const ed=t.closest("[data-edit]"); if(ed){openEditor(ed.dataset.edit);return;}
+  // badges on a recipe
+  const bd=t.closest("[data-bdel]"); if(bd){e.stopPropagation(); const id=bd.closest("[data-bfor]").dataset.bfor, r=byId(id); setBadges(id,badgesOf(r).filter(b=>b!==bd.dataset.bdel)); save(); render(); $("#badgeRow").outerHTML=badgeEditor(byId(id)); return;}
+  if(t.closest("[data-badd]")){e.stopPropagation(); startBadgeInput(t.closest("[data-bfor]").dataset.bfor); return;}
+  const bk=t.closest("[data-bkill]"); if(bk){removeBadge(bk.dataset.bkill); save(); render(); openBadgeManager(); toast(`Removed "${bk.dataset.bkill}" from every recipe`); return;}
+  // header images
+  const im=t.closest("[data-img]"); if(im){openImagePicker(im.dataset.img);return;}
+  const isv=t.closest("[data-imgsave]"); if(isv){const id=isv.dataset.imgsave; if(!imgDraft){toast("Choose a photo or paste a link first");return;} if(!setImage(id,imgDraft))return; render(); openModal(recipeHtml(byId(id))); toast("Header image saved"); return;}
+  const idl=t.closest("[data-imgdel]"); if(idl){const id=idl.dataset.imgdel; setImage(id,""); render(); openModal(recipeHtml(byId(id))); toast("Image removed"); return;}
+  const ibk=t.closest("[data-imgback]"); if(ibk){openModal(recipeHtml(byId(ibk.dataset.imgback)));return;}
   const ps=t.closest("[data-padd]"); if(ps){addPantryLine(ps.dataset.padd);return;}
   if(t.closest("[data-edsave]")){saveEditor();return;}
   if(t.closest("[data-imgo]")){runImport();return;}
@@ -1101,12 +1217,14 @@ document.addEventListener("click",e=>{
   const gs=t.closest("[data-gsel]"); if(gs){const n=gs.dataset.gsel; genSel.has(n)?genSel.delete(n):genSel.add(n); gs.classList.toggle("sel"); return;}
 });
 document.addEventListener("change",e=>{
+  const bn=e.target.closest("[data-bren]"); if(bn){const from=bn.dataset.bren, to=bn.value; if(renameBadge(from,to)){save(); render(); openBadgeManager(); toast("Badge renamed");} else bn.value=from; return;}
   const ct=e.target.closest("[data-cat]"); if(ct){const n=ct.dataset.cat, g=ct.value; const ex=S.extra.find(p=>p.n===n); if(ex) ex.g=g; else {S.catOverride=S.catOverride||{}; S.catOverride[n]=g;} save(); renderPantry(); return;}
   const sh=e.target.closest("[data-shop]"); if(sh){S.shopChecked[sh.dataset.shop]=sh.checked; sh.closest("label").classList.toggle("done",sh.checked); save(); }
 });
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();});
 $("#scrim").addEventListener("click",e=>{if(e.target.id==="scrim")closeModal();});
-bindSeg("#fMeal","meal");bindSeg("#fDay","day");bindSeg("#fSrc","src");bindSeg("#fReady","ready");
+bindSeg("#fMeal","meal");bindSeg("#fDay","day");bindSeg("#fSrc","src");bindSeg("#fBadge","badge");bindSeg("#fReady","ready");
+$("#manageBadges").onclick=openBadgeManager;
 $("#q").addEventListener("input",e=>{F.q=e.target.value;renderCook();});
 $("#fFave").onclick=e=>{F.fave=!F.fave;e.currentTarget.setAttribute("aria-pressed",F.fave);e.currentTarget.classList.toggle("primary",F.fave);renderCook();};
 $("#sort").addEventListener("change",e=>{F.sort=e.target.value;renderCook();});
