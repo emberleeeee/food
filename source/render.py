@@ -5,6 +5,8 @@ SHARE = "https://claude.ai/artifact/J7hHeDtG6GJiGBdBBTCjrm#create"
 d = json.load(open("data.json")); d["spices"] = SPICES
 data = json.dumps(d, separators=(",", ":"), ensure_ascii=False)
 t = open("template.html").read()
+import base64
+t = t.replace("__RAILIMG__", "data:image/jpeg;base64," + base64.b64encode(open("assets/rail.jpg", "rb").read()).decode())
 os.makedirs("../site/data", exist_ok=True); os.makedirs("../dist", exist_ok=True)
 for out, hosted in (("../dist/pantry-planner.html", "false"), ("../site/index.html", "true")):
     open(out, "w").write(t.replace("__DATA__", data).replace("__HOSTED__", hosted).replace("__SHARE__", SHARE))
