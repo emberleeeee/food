@@ -1,0 +1,28 @@
+Produce|Celery
+Produce|Bell peppers
+Produce|Fresh parsley
+Produce|Fresh cilantro
+Produce|Fresh ginger
+Produce|Scallions
+Produce|Tomatillos
+Fridge|Parmesan cheese
+Fridge|Cottage cheese
+Freezer|Frozen chopped spinach
+Freezer|Frozen corn
+Freezer|Frozen peas
+Freezer|Frozen shrimp
+Freezer|Frozen cauliflower florets
+Freezer|Beef chuck roast
+Freezer|Pork shoulder
+Freezer|Ground lamb
+Cans & jars|Canned salmon
+Cans & jars|Canned chicken breast
+Cans & jars|Cannellini beans
+Cans & jars|Canned green chiles
+Cans & jars|Kalamata olives
+Cans & jars|Sun-dried tomatoes
+Cans & jars|Roasted red peppers
+Cans & jars|Hominy
+Pantry|Protein powder
+Snacks, nuts & breakfast|Chia seeds
+Snacks, nuts & breakfast|Ground flaxseed
