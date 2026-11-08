@@ -265,7 +265,6 @@ ol.steps li{margin-bottom:8px;font-size:14px}
     <a href="#pantry" data-v="pantry"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M5 10h14M9 6.5h2M9 13.5h2"/></svg><span class="lbl">Pantry</span><span class="count" id="pantryCount">0</span></a>
     <a class="ext" id="genExt" href="__SHARE__" target="_blank" rel="noopener" style="display:none"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8Z"/></svg><span class="lbl">Recipe generator ↗</span></a>
   </nav>
-  <div class="rail-foot"><span class="sync" id="sync"></span></div>
 </aside>
 <div class="content">
   <main>
@@ -397,7 +396,7 @@ async function flush(){
   catch(e){ setSync(e&&e.code==="quota_exceeded"?"Storage full: older generated recipes may need deleting":"Saved on this device only"); }
   saving=false; if(dirty) flush();
 }
-function setSync(t){$("#sync").textContent=t;}
+function setSync(t){} // save status is no longer shown
 async function initDb(){
   try{
     if(!window.claude||!claude.use) return;
