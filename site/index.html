@@ -105,6 +105,13 @@ select.fsel,.field select.fsel{appearance:none;-webkit-appearance:none;border:1.
 .rcard{padding:22px;display:flex;flex-direction:column;gap:10px;cursor:pointer;transition:transform .2s,box-shadow .2s}
 .rcard:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(28,26,23,.1)}
 .rcard h3{font-size:1.2rem;line-height:1.25}
+.rcard{position:relative}
+.fav{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;border:0;background:transparent;display:grid;place-items:center;color:var(--faint);transition:.15s}
+.fav svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7}
+.fav:hover{background:var(--line2);color:var(--accent)}
+.fav.on{color:var(--accent)}.fav.on svg{fill:currentColor}
+.modal .fav{position:static;width:auto;height:auto;border-radius:100px;padding:8px 14px;gap:6px;display:inline-flex;align-items:center;border:1.5px solid var(--line);background:var(--card);font-weight:500;font-size:13.5px;color:var(--ink)}
+.modal .fav svg{width:16px;height:16px;color:var(--accent)}
 .meta{font-size:13px;color:var(--muted)}
 .macros{display:flex;gap:14px;font-size:13px;color:var(--muted)}
 .macros b{color:var(--ink);font-weight:600}
@@ -381,7 +388,7 @@ function keyFor(name){
 }
 
 /* ---------- state ---------- */
-let S={status:{},extra:[],removed:[],plan:{},out:{"2d":true,"6d":true},saved:[],people:1,shopChecked:{}};
+let S={status:{},extra:[],removed:[],plan:{},out:{"2d":true,"6d":true},saved:[],people:1,shopChecked:{},edits:{},fav:{}};
 function loadLocal(){try{const j=localStorage.getItem("pantry-planner");if(j)S=Object.assign(S,JSON.parse(j));}catch(e){}}
 let dbDoc=null, saveTimer=null, saving=false, dirty=false;
 function save(){
@@ -423,7 +430,14 @@ let H=new Set(), HV=0;
 function recomputeHave(){
   H=new Set(); for(const p of pantryItems()){const st=stOf(p); if(st!=="out") H.add(p.k);} HV++; evalCache.clear();
 }
-function allRecipes(){return D.recipes.concat(S.saved);}
+let AR=null, ARkey="";
+function allRecipes(){ // built-in recipes with your edits applied, then your own recipes
+  const key=HV+"|"+D.recipes.length+"|"+S.saved.length;
+  if(AR&&ARkey===key) return AR;
+  const ed=S.edits||{};
+  AR=D.recipes.map(r=>ed[r.id]?{...r,...ed[r.id],edited:true}:r).concat(S.saved); ARkey=key; return AR;
+}
+function isFave(r){const f=(S.fav||{})[r.id]; return f===undefined?!!r.fave:f;}
 function byId(id){return allRecipes().find(r=>r.id===id);}
 function weight(k){return (D.labels[k]&&D.labels[k].g==="Protein")?3:1;}
 function label(k){return (D.labels[k]&&D.labels[k].l)||k.replace(/_/g," ");}
@@ -493,7 +507,8 @@ function servLabel(r){return r.servings?r.servings+(r.servings===1?" serving":" 
 function timeLabel(r){return r.timeText||(r.time?r.time+" min prep":"");}
 function courseLabel(r){return r.meal.join(" / ");}
 function leanPill(r){return LEAN_LABEL[r.lean]?`<span class="pill p-${r.lean.toLowerCase()}">${LEAN_LABEL[r.lean]}</span>`:"";}
-function srcPill(r){return `<span class="pill ${r.src==="Generated"||r.src==="My recipes"?"p-gen":"p-src"}">${esc(r.src)}</span>`;}
+function srcPill(r){if(r.src==="Your library")return ""; return `<span class="pill ${r.src==="Generated"||r.src==="My recipes"?"p-gen":"p-src"}">${esc(r.src)}</span>`;}
+const HEART='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.2-9.4C1.7 7.9 3.9 4.5 7.3 4.5c2 0 3.6 1.1 4.7 2.7 1.1-1.6 2.7-2.7 4.7-2.7 3.4 0 5.6 3.4 4.5 6.6-1.7 4.8-9.2 9.4-9.2 9.4Z"/></svg>';
 function barCls(p){return p>=90?"":p>=70?"mid":"low";}
 
 /* ---------- cook view ---------- */
@@ -508,7 +523,7 @@ function renderCook(){
   let list=allRecipes().map(r=>({r,e:evalR(r)}));
   list=list.filter(({r,e})=>{
     if(F.meal&&!(MEAL_GROUPS[F.meal]||[F.meal]).some(m=>r.meal.includes(m)))return false;
-    if(F.fave&&!r.fave)return false;
+    if(F.fave&&!isFave(r))return false;
     if(F.day&&r.lean!==F.day)return false;
     if(F.src&&r.src!==F.src)return false;
     if(F.ready&&e.pct<F.ready)return false;
@@ -523,7 +538,8 @@ function renderCook(){
     const sw=e.swap.length?`<span class="s">Swap: ${esc([...new Set(e.swap.map(s=>s.note))].slice(0,2).join("; "))}</span>`:"";
     const status=!miss&&!sw?`<span style="color:var(--have)">Everything on hand</span>`:[miss,sw].filter(Boolean).join("<br>");
     return `<div class="card rcard" data-id="${r.id}">
-      <div class="row" style="gap:6px">${srcPill(r)}${leanPill(r)}${r.fave?`<span class="pill p-fave">Favorite</span>`:""}</div>
+      <button class="fav${isFave(r)?" on":""}" data-fav="${r.id}" aria-pressed="${isFave(r)}" title="${isFave(r)?"Remove from favorites":"Add to favorites"}">${HEART}</button>
+      <div class="row" style="gap:6px;padding-right:34px;min-height:22px">${srcPill(r)}${leanPill(r)}</div>
       <h3>${esc(r.name)}</h3>
       <div class="macros">${r.p!=null?`<span><b>${r.p}g</b> protein</span>${r.kcal!=null?`<span><b>${r.kcal}</b> kcal</span>`:""}${r.c!=null?`<span><b>${r.c}g</b> carbs</span>`:""}`:`<span>${esc(courseLabel(r))}</span>`}</div>
       <div class="meta">${[r.method_type,timeLabel(r),servLabel(r)].filter(Boolean).map(esc).join(" · ")}</div>
@@ -570,8 +586,8 @@ function recipeHtml(r,opts={}){
    <div class="row" style="margin-top:20px">
      ${opts.gen?`<button class="btn primary" data-save>Save to my recipes</button><button class="btn" data-regen>Try another</button>`:`<button class="btn primary" data-addplan="${r.id}">Add to plan</button>`}
      <button class="btn" data-copy="${opts.gen?"__gen":r.id}">Copy for Notion</button>
-     ${opts.gen?"":`<button class="btn" data-link="${r.id}" title="${esc(rUrl(r))}">Copy link</button>`}
-     ${!opts.gen&&S.saved.some(x=>x.id===r.id)?`<span class="spacer"></span><button class="btn" data-edit="${r.id}">Edit</button><button class="btn ghost" data-del="${r.id}">Delete</button>`:""}
+     ${opts.gen?"":`<button class="btn" data-link="${r.id}" title="${esc(rUrl(r))}">Copy link</button><button class="fav${isFave(r)?" on":""}" data-fav="${r.id}" aria-pressed="${isFave(r)}">${HEART}${isFave(r)?"Favorite":"Add to favorites"}</button>`}
+     ${opts.gen?"":`<span class="spacer"></span>${r.edited?`<button class="btn ghost" data-revert="${r.id}" title="Undo your edits and go back to the original">Revert to original</button>`:""}<button class="btn" data-edit="${r.id}">Edit</button>${S.saved.some(x=>x.id===r.id)?`<button class="btn ghost" data-del="${r.id}">Delete</button>`:""}`}
    </div>`;
 }
 function openModal(html){$("#modal").innerHTML=html;$("#scrim").classList.add("on");}
@@ -841,7 +857,7 @@ function checkLine(it){
 }
 let edId=null;
 function openEditor(id,draft){
-  const r=draft||(id?S.saved.find(x=>x.id===id):null); edId=draft?null:(r?r.id:null);
+  const r=draft||(id?byId(id):null); edId=draft?null:(r?r.id:null);
   const meals=["Breakfast","Lunch","Dinner","Side","Snack","Dessert","Drink"];
   const methods=["","Sheet pan","Skillet or stir-fry","Slow cooker","One pot","Oven bake","Grill","No-cook","Freezer-friendly"];
   const v=(x)=>x==null?"":esc(x);
@@ -867,7 +883,7 @@ function openEditor(id,draft){
        <div class="macros">${[["kcal","Calories"],["p","Protein g"],["c","Carbs g"],["f","Fat g"],["fi","Fiber g"]].map(([k,l])=>`<label class="field">${l}<input type="number" min="0" data-mac="${k}" value="${v(r&&r[k])}"></label>`).join("")}</div></div>
      <label class="field full">Source link<input id="edUrl" type="url" value="${v(r&&r.url)}" placeholder="https://… (optional)"></label>
      <label class="field full">Notes<textarea id="edNote" rows="2" placeholder="Storage, serving ideas, what to tweak next time">${v(r&&r.note)}</textarea></label>
-     <label class="row full" style="gap:8px;font-size:13.5px"><input type="checkbox" id="edFave" ${r&&r.fave?"checked":""} style="accent-color:var(--accent)"> Mark as a favorite</label>
+     <label class="row full" style="gap:8px;font-size:13.5px"><input type="checkbox" id="edFave" ${r&&isFave(r)?"checked":""} style="accent-color:var(--accent)"> Mark as a favorite</label>
    </div>
    <div class="row" style="margin-top:20px"><button class="btn primary" data-edsave>${r&&!draft?"Save changes":"Save recipe"}</button><button class="btn" data-close>Cancel</button></div>`);
   $("#edIng").addEventListener("input",edCheck); $("#edFind").addEventListener("input",edSugg);
@@ -898,12 +914,26 @@ function saveEditor(){
   const req=edLines(); if(!req.length){$("#edIng").focus();toast("Add at least one ingredient");return;}
   const meal=[...document.querySelectorAll(".mealpick input:checked")].map(x=>x.value);
   const mac={}; document.querySelectorAll("[data-mac]").forEach(i=>{mac[i.dataset.mac]=i.value===""?null:Math.round(+i.value);});
+  const base=edId?D.recipes.find(x=>x.id===edId):null;
+  if(base){ // editing a built-in recipe: keep your version as an override, the original stays untouched
+    const time=+$("#edTime").value||0, cur=byId(edId);
+    const o={name,meal:meal.length?meal:["Dinner"],servings:Math.max(1,+$("#edServ").value||4),time,
+      method_type:$("#edMethod").value,cuisine:$("#edCuisine").value.trim(),req,
+      steps:$("#edSteps").value.split("\n").map(s=>s.trim().replace(/^\d+[.)]\s*/,"")).filter(Boolean),
+      note:$("#edNote").value.trim(),url:$("#edUrl").value.trim(),link:false,...mac};
+    if(time!==(cur.time||0)) o.timeText="";
+    o.lean=o.p!=null&&o.c!=null?(o.c>=40?"Bike":(o.p>=30&&o.c<=20?"Strength":"Any")):(base.p===o.p&&base.c===o.c?base.lean:"Any");
+    S.edits=S.edits||{}; S.edits[edId]=o;
+    const fv=$("#edFave").checked; S.fav=S.fav||{}; if(fv===!!base.fave) delete S.fav[edId]; else S.fav[edId]=fv;
+    evalCache.delete(edId); save(); render(); openModal(recipeHtml(byId(edId))); toast("Changes saved. The original is kept if you ever want it back."); return;
+  }
   const old=edId?S.saved.find(x=>x.id===edId):null;
   const r=Object.assign(old||{id:"m"+Date.now().toString(36),src:"My recipes",category:"My recipes",cook:"",freezer:"",serve:{},base:""},{
     name,meal:meal.length?meal:["Dinner"],servings:Math.max(1,+$("#edServ").value||4),time:+$("#edTime").value||0,
     method_type:$("#edMethod").value,cuisine:$("#edCuisine").value.trim(),req,
     steps:$("#edSteps").value.split("\n").map(s=>s.trim().replace(/^\d+[.)]\s*/,"")).filter(Boolean),
     note:$("#edNote").value.trim(),url:$("#edUrl").value.trim(),fave:$("#edFave").checked,...mac});
+  if(S.fav) delete S.fav[r.id];
   r.lean=r.p!=null&&r.c!=null?(r.c>=40?"Bike":(r.p>=30&&r.c<=20?"Strength":"Any")):"Any";
   if(!old) S.saved.push(r);
   evalCache.delete(r.id); save(); render(); openModal(recipeHtml(r)); toast(old?"Changes saved":"Saved. It's in Cook and the planner now.");
@@ -1038,6 +1068,10 @@ function render(){buildSlugs();S.saved.forEach(r=>r.req.forEach(x=>{if(x.buy)D.l
 document.addEventListener("click",e=>{
   const t=e.target;
   if(t.closest("[data-close]")||t.id==="scrim"){closeModal();return;}
+  const fv=t.closest("[data-fav]"); if(fv){e.stopPropagation(); const r=byId(fv.dataset.fav); if(!r)return; const nv=!isFave(r); S.fav=S.fav||{};
+    if(nv===!!r.fave&&!S.saved.includes(r)) delete S.fav[r.id]; else S.fav[r.id]=nv;
+    const inModal=!!fv.closest("#modal"); save(); render(); if(inModal) openModal(recipeHtml(byId(r.id))); toast(nv?"Added to favorites":"Removed from favorites"); return;}
+  const rv=t.closest("[data-revert]"); if(rv){delete S.edits[rv.dataset.revert]; save(); render(); openModal(recipeHtml(byId(rv.dataset.revert))); toast("Back to the original recipe"); return;}
   const rc=t.closest(".rcard"); if(rc){location.hash=rHash(byId(rc.dataset.id));return;}
   if(t.closest("a.rlink")){e.stopPropagation();return;}
   const cg=t.closest("[data-change]"); if(cg){slotPick(cg.dataset.change);return;}
