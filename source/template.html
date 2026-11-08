@@ -740,6 +740,7 @@ function renderPantry(){
 /* ---------- generator ---------- */
 let sample=null, genSel=new Set(), lastGen=null, genAbort=null;
 function renderGenChips(){
+  if(!$("#gMust")) return;
   const items=pantryItems().filter(p=>(stOf(p))!=="out"&&!["Baking & sweeteners","Oils & vinegars","Spices","Snacks, nuts & breakfast"].includes(p.g));
   $("#gMust").innerHTML=items.map(p=>`<span class="chip ${genSel.has(p.n)?"sel":""}" data-gsel="${esc(p.n)}">${esc(p.n)}</span>`).join("");
 }
@@ -1060,7 +1061,7 @@ function route(){
   $("#scrim").classList.remove("on"); showView(h);
 }
 function showView(v){
-  const ok=["cook","plan","create","shop","pantry"].includes(v)?v:"cook"; lastView=ok;
+  const ok=["cook","plan","shop","pantry"].concat(HOSTED?[]:["create"]).includes(v)?v:"cook"; lastView=ok;
   document.querySelectorAll(".view").forEach(s=>s.classList.toggle("on",s.id==="v-"+ok));
   document.querySelectorAll("#tabs a").forEach(a=>a.classList.toggle("on",a.dataset.v===ok));
 }
@@ -1129,13 +1130,13 @@ $("#copyShare").onclick=()=>copy($("#shareUrl").value,"Generator link copied");
 window.addEventListener("hashchange",route);
 
 const HOSTED=__HOSTED__;
-if(HOSTED){ document.querySelector('#tabs a[data-v="create"]').style.display="none"; $("#genExt").style.display=""; if(location.hash==="#create") location.hash="cook"; }
+// The recipe generator only runs on claude.ai; the self-hosted site has no trace of it.
+if(HOSTED){ ['#tabs a[data-v="create"]',"#genExt","#v-create"].forEach(s=>document.querySelector(s)?.remove()); if(location.hash==="#create") location.hash="cook"; }
 loadLocal(); render(); route();
 if(HOSTED && location.protocol!=="file:"){ fetch("data/recipes.json",{cache:"no-store"}).then(r=>r.ok?r.json():null).then(j=>{ if(j&&Array.isArray(j.recipes)){ Object.assign(D,j); render(); route(); } }).catch(()=>{}); }
-$("#gGo").disabled=true; $("#gAvail").textContent="Connecting to Claude…";
-(async()=>{
+if(!HOSTED) (async()=>{
+  $("#gGo").disabled=true; $("#gAvail").textContent="Connecting to Claude…";
   try{ sample=window.claude&&claude.use?await claude.use("sample"):null; }catch(e){sample=null;}
-  if(HOSTED) return;
   if(sample){$("#gGo").disabled=false;$("#gAvail").textContent="The first time, you'll be asked to let this page use Claude.";}
   else {$("#gAvail").textContent="Recipe generation works when this page is open on claude.ai.";}
 })();
