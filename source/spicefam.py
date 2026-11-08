@@ -11,7 +11,7 @@ FAM = [
  (r"white pepper", ["White pepper"]),
  (r"pink peppercorns?", ["Pink peppercorns"]),
  (r"s[iz]e?chuan pepper(corns?)?", ["Sichuan peppercorns"]),
- (r"black pepper(corns?)?|\bpeppercorns?\b|ground pepper|and pepper\b|& pepper\b|pepper to taste|\bpepper,|^pepper$", ["Black peppercorns"]),
+ (r"black pepper(corns?)?|\bpeppercorns?\b|ground pepper|and pepper\b|& pepper\b|pepper to taste|(?<!bell )(?<!green )(?<!red )(?<!sweet )(?<!chili )(?<!chile )(?<!banana )(?<!yellow )(?<!orange )(?<!poblano )(?<!serrano )\bpepper,|^pepper$", ["Black peppercorns"]),
  (r"pumpkin (pie )?spice", ["Pumpkin pie spice"]),
  (r"apple pie spice", ["Apple pie spice"]),
  (r"cinnamon", ["Ground cinnamon","Cinnamon sticks"]),

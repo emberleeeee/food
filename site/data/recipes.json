@@ -37942,7 +37942,7 @@
    ]
   ],
   [
-   "black pepper(corns?)?|\\bpeppercorns?\\b|ground pepper|and pepper\\b|& pepper\\b|pepper to taste|\\bpepper,|^pepper$",
+   "black pepper(corns?)?|\\bpeppercorns?\\b|ground pepper|and pepper\\b|& pepper\\b|pepper to taste|(?<!bell )(?<!green )(?<!red )(?<!sweet )(?<!chili )(?<!chile )(?<!banana )(?<!yellow )(?<!orange )(?<!poblano )(?<!serrano )\\bpepper,|^pepper$",
    [
     "sp_black_peppercorns"
    ]
@@ -38525,7 +38525,7 @@
   "white pepper",
   "pink peppercorns?",
   "s[iz]e?chuan pepper(corns?)?",
-  "black pepper(corns?)?|\\bpeppercorns?\\b|ground pepper|and pepper\\b|& pepper\\b|pepper to taste|\\bpepper,|^pepper$",
+  "black pepper(corns?)?|\\bpeppercorns?\\b|ground pepper|and pepper\\b|& pepper\\b|pepper to taste|(?<!bell )(?<!green )(?<!red )(?<!sweet )(?<!chili )(?<!chile )(?<!banana )(?<!yellow )(?<!orange )(?<!poblano )(?<!serrano )\\bpepper,|^pepper$",
   "pumpkin (pie )?spice",
   "apple pie spice",
   "cinnamon",
