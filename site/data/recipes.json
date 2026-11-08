@@ -10874,9 +10874,9 @@
     "Lunch"
    ],
    "method_type": "",
-   "servings": null,
-   "time": 0,
-   "timeText": "",
+   "servings": 4,
+   "time": 15,
+   "timeText": "15 min",
    "cook": "",
    "freezer": "",
    "kcal": null,
@@ -10885,14 +10885,120 @@
    "f": null,
    "fi": null,
    "lean": "Any",
-   "req": [],
-   "steps": [],
+   "req": [
+    {
+     "l": "1 can chickpeas, rinsed and drained",
+     "k": [
+      [
+       "chickpeas"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 medium cucumber, chopped",
+     "k": [
+      [
+       "cucumber"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 large red bell pepper, diced",
+     "k": [
+      [
+       "bell_pepper"
+      ]
+     ],
+     "opt": false,
+     "spice": true
+    },
+    {
+     "l": "1 cup shredded carrots",
+     "k": [
+      [
+       "carrots"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1/4 cup cilantro, finely chopped",
+     "k": [
+      [
+       "cilantro"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dressing: 3 tbsp lime juice",
+     "k": [
+      [
+       "lime"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dressing: 2 tbsp peanut butter",
+     "k": [
+      [
+       "peanut_butter"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dressing: 1 tbsp toasted sesame oil",
+     "k": [
+      [
+       "sesame_oil"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dressing: 1 tbsp honey or maple syrup",
+     "k": [
+      [
+       "honey",
+       "maple"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dressing: 1 to 2 tbsp sriracha sauce",
+     "k": [
+      [
+       "sriracha"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    }
+   ],
+   "steps": [
+    "Combine the chickpeas, cucumber, bell pepper, carrots and cilantro in a large bowl.",
+    "Whisk the lime juice, peanut butter, sesame oil, honey and sriracha until smooth, thinning with a splash of water if needed.",
+    "Toss the salad with the dressing and serve, or chill until ready to eat."
+   ],
    "serve": {},
    "base": "",
-   "note": "Saved as a link only. Full recipe at the source.",
+   "note": "No cooking, so it's an easy meal-prep lunch; it holds in the fridge for a few days. Use less sriracha for a milder dressing.",
    "fave": true,
    "url": "https://eatingwithyourhands.com/crunchy-thai-chickpea-salad/",
-   "link": true,
+   "link": false,
    "site": ""
   },
   {
@@ -12025,25 +12131,120 @@
     "Side"
    ],
    "method_type": "",
-   "servings": null,
-   "time": 0,
-   "timeText": "",
+   "servings": 12,
+   "time": 30,
+   "timeText": "30 min",
    "cook": "",
    "freezer": "",
-   "kcal": null,
-   "p": null,
-   "c": null,
-   "f": null,
+   "kcal": 92,
+   "p": 4,
+   "c": 0,
+   "f": 8,
    "fi": null,
    "lean": "Any",
-   "req": [],
-   "steps": [],
+   "req": [
+    {
+     "l": "6 large eggs",
+     "k": [
+      [
+       "eggs"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "3 rashers bacon, diced",
+     "k": [
+      [
+       "bacon"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Filling: 1 tablespoon Tabasco or Frank's Hot Sauce",
+     "k": [
+      [
+       "hot_sauce"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Filling: 2 tablespoons butter or ghee",
+     "k": [
+      [
+       "butter",
+       "ghee"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Filling: 1/2 teaspoon garlic powder",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "Filling: 1/2 teaspoon onion powder",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "Filling: 1/4 teaspoon salt",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "Filling: 1 tablespoon mayonnaise",
+     "k": [
+      [
+       "mayo"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Topping: 1 tablespoon mayonnaise",
+     "k": [
+      [
+       "mayo"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Topping: 3-4 drops hot sauce",
+     "k": [
+      [
+       "hot_sauce"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    }
+   ],
+   "steps": [
+    "Start the eggs in cold water, bring to a boil and cook 6-7 minutes, turning them a few times early on to center the yolks, then chill in very cold water.",
+    "Meanwhile fry the diced bacon in a little oil until crisp and set aside.",
+    "Peel and halve the eggs lengthwise and remove the yolks.",
+    "Melt the butter over medium-high heat with the hot sauce, garlic powder, onion powder and salt.",
+    "Mash the yolks into the warm sauce until smooth, then mix in 1 tablespoon mayo and half the bacon.",
+    "Fill the egg whites with the yolk mixture, pressing it in lightly.",
+    "Stir the remaining mayo with a few drops of hot sauce, then top each egg with a small dab of it and the rest of the bacon."
+   ],
    "serve": {},
    "base": "",
-   "note": "Saved as a link only. Full recipe at the source.",
+   "note": "Filled eggs keep a day or two in the fridge; add the spicy mayo and bacon right before serving. Nutrition is per egg half, about 2 halves per person.",
    "fave": true,
    "url": "https://www.cookedandloved.com/recipes/buffalo-deviled-eggs-with-crispy-bacon",
-   "link": true,
+   "link": false,
    "site": "https://food.emilyblackwell.com/recipes/buffalo-deviled-eggs.html"
   },
   {
@@ -14767,25 +14968,96 @@
     "Dessert"
    ],
    "method_type": "",
-   "servings": null,
-   "time": 0,
-   "timeText": "",
+   "servings": 20,
+   "time": 45,
+   "timeText": "45 min",
    "cook": "",
    "freezer": "",
-   "kcal": null,
-   "p": null,
-   "c": null,
-   "f": null,
+   "kcal": 216,
+   "p": 5,
+   "c": 22,
+   "f": 13,
    "fi": null,
    "lean": "Any",
-   "req": [],
-   "steps": [],
+   "req": [
+    {
+     "l": "3 cups powdered sugar",
+     "k": [
+      [
+       "sugar"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 1/2 cups creamy or crunchy peanut butter",
+     "k": [
+      [
+       "peanut_butter"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1/4 cup butter or margarine, melted",
+     "k": [
+      [
+       "butter"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "2 tablespoons milk",
+     "k": [
+      [
+       "milk"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "22 oz milk chocolate chips (two 11-oz bags, divided)",
+     "k": [
+      [
+       "milk"
+      ],
+      [
+       "chocolate"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "2 tablespoons shortening",
+     "k": [
+      [
+       "x_shortening"
+      ]
+     ],
+     "opt": false,
+     "free": true
+    }
+   ],
+   "steps": [
+    "Beat the powdered sugar, peanut butter and melted butter together; it will be crumbly until you add the milk and keep beating until soft.",
+    "Working with 1-2 cups at a time, roll the dough about 1/2 inch thick on a floured surface and cut egg shapes with an oval cutter.",
+    "Arrange the eggs on a baking sheet and freeze at least 1 hour.",
+    "Microwave one bag of chocolate chips with 1 tablespoon shortening until melted, thinning with a bit more shortening if needed.",
+    "Fully dip each frozen egg in chocolate and let it set on wax paper.",
+    "Melt the second bag with more shortening when you run low."
+   ],
    "serve": {},
    "base": "",
-   "note": "Saved as a link only. Full recipe at the source.",
+   "note": "You need an oval or egg-shaped cookie cutter, about 2 1/2 inches long. Store airtight in the fridge or freezer and let frozen eggs sit about 15 minutes before eating.",
    "fave": false,
    "url": "https://www.sixsistersstuff.com/recipe/homemade-reeses-eggs/",
-   "link": true,
+   "link": false,
    "site": "https://food.emilyblackwell.com/recipes/reeses-eggs.html"
   },
   {
@@ -14872,9 +15144,6 @@
       ],
       [
        "cilantro"
-      ],
-      [
-       "salsa"
       ]
      ],
      "opt": false,
@@ -15418,9 +15687,9 @@
     "Lunch"
    ],
    "method_type": "",
-   "servings": null,
-   "time": 0,
-   "timeText": "",
+   "servings": 6,
+   "time": 105,
+   "timeText": "1 hr 45 min",
    "cook": "",
    "freezer": "",
    "kcal": null,
@@ -15429,14 +15698,124 @@
    "f": null,
    "fi": null,
    "lean": "Any",
-   "req": [],
-   "steps": [],
+   "req": [
+    {
+     "l": "2 lb (910 g) yellow onions (4 large or 5 medium), sliced",
+     "k": [
+      [
+       "onion"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "2 tbsp (30 g) unsalted butter",
+     "k": [
+      [
+       "butter"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 tbsp (15 g) olive oil",
+     "k": [
+      [
+       "olive_oil"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Kosher salt and black pepper",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "2 tbsp (30 ml) dry sherry, vermouth, or white wine (optional)",
+     "k": [
+      [
+       "spirits",
+       "wine"
+      ]
+     ],
+     "opt": true,
+     "spice": false
+    },
+    {
+     "l": "2 garlic cloves, minced",
+     "k": [
+      [
+       "garlic"
+      ]
+     ],
+     "opt": false,
+     "spice": true
+    },
+    {
+     "l": "1 1/2 cups (300 g) dried farro",
+     "k": [
+      [
+       "farro"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "3/4 cup (135 g) dried lentils (green/le puy or brown/italian preferred)",
+     "k": [
+      [
+       "green_lentils"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "A few sprigs fresh thyme",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "6 cups (1.4 L) vegetable broth, plus extra splashes if needed",
+     "k": [
+      [
+       "broth_veg"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "2 cups (225 g) coarsely grated Gruyère",
+     "k": [
+      [
+       "cheddar"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    }
+   ],
+   "steps": [
+    "Melt the butter with the oil in a large deep pan, ovenproof if possible, add the onions, cover and let them sweat on low for 15-20 minutes.",
+    "Uncover, raise the heat, salt well (about 2 tsp kosher salt) and cook, stirring often, about 20 minutes more until deep brown and jammy, lowering the heat once the liquid is gone.",
+    "Heat the oven to 375F (190C).",
+    "Stir in the garlic for a minute, then add the sherry or wine if using and cook it off.",
+    "Toast the farro in the pan for 2 minutes, then add the lentils, broth and thyme, bring to a simmer and season with salt and pepper; move to a baking dish if the pan isn't ovenproof.",
+    "Cover and bake 40-50 minutes, stirring once halfway, until the grains and lentils are tender, adding 1/4-1/2 cup more broth if it dries out; it should stay loose like risotto.",
+    "Pull out the thyme stems, cover the top with Gruyère and broil until browned."
+   ],
    "serve": {},
    "base": "",
-   "note": "Saved as a link only. Full recipe at the source.",
+   "note": "Keeps 4-5 days in the fridge; reheat at 350F. The base can be made a few days ahead, loosened with broth when reheated, and topped with cheese and broiled just before serving.",
    "fave": true,
    "url": "https://smittenkitchen.com/2024/01/french-onion-baked-lentils-and-farro/",
-   "link": true,
+   "link": false,
    "site": "https://food.emilyblackwell.com/recipes/french-onion-baked-lentils-and-farro.html"
   },
   {
@@ -16964,9 +17343,6 @@
       ],
       [
        "crushed_tomatoes"
-      ],
-      [
-       "salsa"
       ],
       [
        "broth_veg"
@@ -20926,25 +21302,154 @@
     "Side"
    ],
    "method_type": "",
-   "servings": null,
-   "time": 0,
-   "timeText": "",
+   "servings": 4,
+   "time": 15,
+   "timeText": "15 min",
    "cook": "",
    "freezer": "",
-   "kcal": null,
-   "p": null,
-   "c": null,
-   "f": null,
+   "kcal": 461,
+   "p": 14,
+   "c": 41,
+   "f": 25,
    "fi": null,
-   "lean": "Any",
-   "req": [],
-   "steps": [],
+   "lean": "Bike",
+   "req": [
+    {
+     "l": "1 cup kimchi, cut into thumbnail size pieces",
+     "k": [
+      [
+       "kimchi"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "150 g bacon (5.3 ounces), cut into thumbnail size pieces",
+     "k": [
+      [
+       "bacon"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "3 cups steamed short grain rice (or medium grain rice)",
+     "k": [
+      [
+       "jasmine_rice"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "4 x-large eggs, cooked sunny side up or per your preference",
+     "k": [
+      [
+       "eggs"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1/2 tsp minced garlic",
+     "k": [
+      [
+       "garlic"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1/4 cup kimchi juice",
+     "k": [
+      [
+       "kimchi"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1/2 Tbsp sesame oil",
+     "k": [
+      [
+       "sesame_oil"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 Tbsp cooking oil",
+     "k": [
+      [
+       "olive_oil"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Optional: 1 pack enoki mushrooms (200 g / 7 ounces), root removed, rinsed and drained",
+     "k": [
+      [
+       "mushrooms"
+      ]
+     ],
+     "opt": true,
+     "spice": false
+    },
+    {
+     "l": "Garnish: 1 Tbsp toasted sesame seeds",
+     "k": [
+      [
+       "sesame_seeds"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Garnish: 1/2 stalk green onion, thinly sliced",
+     "k": [
+      [
+       "onion"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Garnish: roasted seasoned seaweed, shredded",
+     "k": [
+      [
+       "x_roasted_seasoned_seaweed"
+      ]
+     ],
+     "opt": false,
+     "free": true
+    }
+   ],
+   "steps": [
+    "Heat a wok or pan over medium-high, add the cooking oil and stir the garlic for about 10 seconds.",
+    "Add the bacon and cook until roughly half done.",
+    "Add the kimchi and cook until mostly done.",
+    "If using enoki, toss them in for a few seconds, then drop the heat to medium-low.",
+    "Add the rice and kimchi juice and mix until evenly coated.",
+    "Stir in the sesame oil and take the pan off the heat.",
+    "Plate, garnish, and top each serving with an egg."
+   ],
    "serve": {},
    "base": "",
-   "note": "Saved as a link only. Full recipe at the source.",
+   "note": "Use day-old, drier rice so it doesn't go gluey, and kimchi that's at least 2 weeks old (or add 1/2 tsp rice vinegar to the juice). Short on kimchi juice? Use 2 1/2 Tbsp juice plus 1 Tbsp gochujang.",
    "fave": false,
    "url": "https://mykoreankitchen.com/wprm_print/9149",
-   "link": true,
+   "link": false,
    "site": "https://food.emilyblackwell.com/recipes/kimchi-fried-rice.html"
   },
   {
@@ -22262,25 +22767,171 @@
     "Side"
    ],
    "method_type": "",
-   "servings": null,
-   "time": 0,
-   "timeText": "",
+   "servings": 4,
+   "time": 35,
+   "timeText": "35 min",
    "cook": "",
    "freezer": "",
-   "kcal": null,
-   "p": null,
-   "c": null,
-   "f": null,
+   "kcal": 645,
+   "p": 15,
+   "c": 94,
+   "f": 25,
    "fi": null,
-   "lean": "Any",
-   "req": [],
-   "steps": [],
+   "lean": "Bike",
+   "req": [
+    {
+     "l": "Rice: 2 cups brown rice, cooked and cooled (or leftover)",
+     "k": [
+      [
+       "jasmine_rice"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Rice: 2 tsp gochujang",
+     "k": [
+      [
+       "gochujang"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Rice: 2 tbsp sesame oil",
+     "k": [
+      [
+       "sesame_oil"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Rice: 2 tbsp soy sauce",
+     "k": [
+      [
+       "soy"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 cup peas, steamed",
+     "k": [
+      [
+       "peas"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 Persian cucumber, chopped",
+     "k": [
+      [
+       "cucumber"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "3 green onions, finely sliced",
+     "k": [
+      [
+       "onion"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 avocado, diced",
+     "k": [
+      [
+       "avocado"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1/4 cup mint, chopped",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "1/4 cup cilantro, chopped",
+     "k": [
+      [
+       "cilantro"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dressing: 1 tbsp honey",
+     "k": [
+      [
+       "honey"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dressing: 2 tbsp soy sauce",
+     "k": [
+      [
+       "soy"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dressing: 1/4 cup tahini",
+     "k": [
+      [
+       "tahini"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dressing: 1/4 cup lime juice",
+     "k": [
+      [
+       "lime"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dressing: 1/4 cup water",
+     "k": [],
+     "spice": false
+    }
+   ],
+   "steps": [
+    "Heat the oven to 400F and stir together the gochujang, sesame oil and soy sauce, then toss the rice in it.",
+    "Spread the rice on a lined sheet pan and bake 15-20 minutes, stirring and respreading now and then, until crisp.",
+    "Whisk the dressing ingredients until smooth; it looks lumpy at first but comes together.",
+    "Combine the peas, cucumber, green onions, avocado and herbs in a bowl, add the crispy rice, drizzle with dressing and toss gently."
+   ],
    "serve": {},
    "base": "",
-   "note": "Saved as a link only. Full recipe at the source.",
+   "note": "Day-old rice crisps best. To make ahead, store the crispy rice airtight on its own and combine with the salad at serving time.",
    "fave": false,
    "url": "https://steamykitchen.com/251774-crispy-gochujang-rice-salad.html",
-   "link": true,
+   "link": false,
    "site": "https://food.emilyblackwell.com/recipes/crispy-gochujang-rice-salad.html"
   },
   {
@@ -22452,25 +23103,297 @@
     "Dessert"
    ],
    "method_type": "",
-   "servings": null,
-   "time": 0,
-   "timeText": "",
+   "servings": 12,
+   "time": 210,
+   "timeText": "3 hr 30 min",
    "cook": "",
    "freezer": "",
-   "kcal": null,
-   "p": null,
-   "c": null,
-   "f": null,
+   "kcal": 388,
+   "p": 3,
+   "c": 42,
+   "f": 25,
    "fi": null,
-   "lean": "Any",
-   "req": [],
-   "steps": [],
+   "lean": "Bike",
+   "req": [
+    {
+     "l": "Peach jam: 1 1/2 cups (210 g) fresh ripe peaches, cubed",
+     "k": [
+      [
+       "peaches"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Peach jam: 2 tbsp (30 g) granulated sugar",
+     "k": [
+      [
+       "sugar"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Peach jam: 1 tsp lemon juice",
+     "k": [
+      [
+       "lemon"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Peach jam: 2 tsp cornstarch",
+     "k": [
+      [
+       "cornstarch"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Peach jam: 1 tbsp water",
+     "k": [],
+     "spice": false
+    },
+    {
+     "l": "Filling: 1/2 cup (60 g) very thinly sliced peaches",
+     "k": [
+      [
+       "peaches"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Tangzhong: 3/4 cup (155 g) water",
+     "k": [],
+     "spice": false
+    },
+    {
+     "l": "Tangzhong: 1/4 cup (32 g) all-purpose flour",
+     "k": [
+      [
+       "flour"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dough: 3 1/2 cups (460 g) all-purpose flour",
+     "k": [
+      [
+       "flour"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dough: 1/3 cup (66 g) granulated sugar",
+     "k": [
+      [
+       "sugar"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dough: 2 teaspoons instant yeast",
+     "k": [
+      [
+       "yeast"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dough: 3/4 teaspoon fine sea salt",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "Dough: 1/2 cup (110 g) whole milk, room temperature",
+     "k": [
+      [
+       "milk"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dough: 1 (50 g) large egg, room temperature",
+     "k": [
+      [
+       "eggs"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dough: 1 teaspoon vanilla extract",
+     "k": [
+      [
+       "vanilla"
+      ],
+      [
+       "extract"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dough: 4 tbsp (56 g) unsalted butter, softened",
+     "k": [
+      [
+       "butter"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Filling: 1/2 cup (113 g) unsalted butter, room temperature",
+     "k": [
+      [
+       "butter"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Filling: 1/2 cup (100 g) light or dark brown sugar",
+     "k": [
+      [
+       "brown_sugar"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Filling: 1 teaspoon ground cinnamon",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "Topping: 6 tbsp (84 g) unsalted butter, melted",
+     "k": [
+      [
+       "butter"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Topping: 3/4 cup + 1 tbsp (100 g) all-purpose flour",
+     "k": [
+      [
+       "flour"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Topping: 1/2 cup (100 g) granulated sugar",
+     "k": [
+      [
+       "sugar"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Topping: 2 tbsp (25 g) light brown sugar, packed",
+     "k": [
+      [
+       "brown_sugar"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Topping: 1/2 teaspoon ground cinnamon",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "Frosting: 4 tbsp (56 g) unsalted butter, room temperature",
+     "k": [
+      [
+       "butter"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Frosting: 2 oz cream cheese, room temperature",
+     "k": [
+      [
+       "cream_cheese"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Frosting: 1 cup (100 g) powdered sugar",
+     "k": [
+      [
+       "sugar"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Frosting: 2 1/2 tablespoons heavy cream",
+     "k": [
+      [
+       "heavy_cream"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    }
+   ],
+   "steps": [
+    "Cook the cubed peaches, sugar and lemon juice over medium heat until juicy and thick, stir in the cornstarch slurry, cook 2 minutes more and cool completely.",
+    "Whisk the tangzhong water and flour in a small pot over medium heat until it becomes a thick paste; set aside.",
+    "In a stand mixer combine the flour, sugar, yeast and salt, add the egg, milk, vanilla and tangzhong, and knead on low into a shaggy ball.",
+    "Add the softened butter a tablespoon at a time, then knead 10-11 minutes until smooth and elastic, adjusting with a little flour or milk if needed.",
+    "Shape into a ball, cover in a buttered bowl and let rise somewhere warm about 1 hour until doubled.",
+    "Line a 9x13 metal pan with parchment and beat the filling butter, brown sugar and cinnamon until smooth.",
+    "Roll the dough to an 18x15-inch rectangle, spread the brown sugar filling over it leaving a 1/2-inch bare strip along the far edge, then spread on the cooled jam and lay the thin peach slices across.",
+    "Cut 12 strips about 1 1/2 inches wide, roll each up and set them in the pan.",
+    "Cover and let rise about 60 minutes until doubled, heating the oven to 325F (162C) meanwhile.",
+    "Rub the topping ingredients together until crumbly and chill until needed.",
+    "Scatter the crumb over the rolls and bake 30-35 minutes until golden (center at least 190F), then cool on a rack.",
+    "Beat the cream cheese, butter and powdered sugar smooth, stir in the cream, and spoon over the warm rolls."
+   ],
    "serve": {},
    "base": "",
-   "note": "Saved as a link only. Full recipe at the source.",
+   "note": "Leftovers keep airtight 3-5 days; reheat in the oven or microwave. Unbaked rolls freeze well: thaw overnight in the fridge and pick up at the second rise.",
    "fave": false,
    "url": "https://cambreabakes.com/peach-cinnamon-rolls/",
-   "link": true,
+   "link": false,
    "site": "https://food.emilyblackwell.com/recipes/peach-cobbler-cinnamon-rolls.html"
   },
   {
@@ -24412,9 +25335,6 @@
        "garlic"
       ],
       [
-       "pesto"
-      ],
-      [
        "olive_oil"
       ],
       [
@@ -25194,25 +26114,74 @@
     "Drink"
    ],
    "method_type": "",
-   "servings": null,
-   "time": 0,
-   "timeText": "",
+   "servings": 8,
+   "time": 20,
+   "timeText": "20 min",
    "cook": "",
    "freezer": "",
-   "kcal": null,
-   "p": null,
-   "c": null,
-   "f": null,
+   "kcal": 77,
+   "p": 0,
+   "c": 21,
+   "f": 0,
    "fi": null,
    "lean": "Any",
-   "req": [],
-   "steps": [],
+   "req": [
+    {
+     "l": "1/2 c fresh basil leaves, plus extra sprigs for garnish",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "1/2 c fresh mint leaves, plus extra sprigs for garnish",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "1/2 c honey",
+     "k": [
+      [
+       "honey"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "8 c filtered water, divided",
+     "k": [
+      [
+       "x_filtered_water"
+      ]
+     ],
+     "opt": false,
+     "free": true
+    },
+    {
+     "l": "1.5-2 c fresh squeezed lemon juice",
+     "k": [
+      [
+       "lemon"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    }
+   ],
+   "steps": [
+    "Muddle the basil and mint in a mortar and pestle or a small bowl.",
+    "Warm the honey with 1/2 cup of the water until just barely boiling, stirring to dissolve, then take off the heat.",
+    "Pour the warm syrup over the herbs and let it steep at room temperature for 30 minutes up to several hours.",
+    "Strain the herb syrup into a pitcher or quart jar.",
+    "Juice 8-10 lemons to get 1.5-2 cups.",
+    "Combine the syrup, lemon juice and remaining water in a large pitcher, add 2 cups ice and stir.",
+    "Serve over ice with a sprig of mint and basil."
+   ],
    "serve": {},
    "base": "",
-   "note": "Saved as a link only. Full recipe at the source.",
+   "note": "Steep the syrup longer for more herb flavor. For a sparkling version, mix only the syrup and lemon juice as a base and top 1/3 cup of it with sparkling water over ice.",
    "fave": true,
    "url": "https://oursaltykitchen.com/mint-basil-lemonade/",
-   "link": true,
+   "link": false,
    "site": "https://food.emilyblackwell.com/recipes/mint-and-basil-lemonade-mocktail.html"
   },
   {
@@ -25680,14 +26649,127 @@
    "f": null,
    "fi": null,
    "lean": "Any",
-   "req": [],
-   "steps": [],
+   "req": [
+    {
+     "l": "1/2 cup unsweetened coconut milk (from a can)",
+     "k": [
+      [
+       "milk"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1/2 cup creamy peanut butter",
+     "k": [
+      [
+       "peanut_butter"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "2 Tbsp soy sauce",
+     "k": [
+      [
+       "soy"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "2 Tbsp brown sugar",
+     "k": [
+      [
+       "brown_sugar"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 Tbsp lime juice",
+     "k": [
+      [
+       "lime"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 Tbsp fish sauce",
+     "k": [
+      [
+       "fish_sauce"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 Tbsp chili paste",
+     "k": [
+      [
+       "x_chili_paste"
+      ]
+     ],
+     "opt": false,
+     "free": true
+    },
+    {
+     "l": "2 cloves garlic, minced",
+     "k": [
+      [
+       "garlic"
+      ]
+     ],
+     "opt": false,
+     "spice": true
+    },
+    {
+     "l": "1 tsp ginger, grated",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "1 tsp rice wine vinegar",
+     "k": [
+      [
+       "jasmine_rice"
+      ],
+      [
+       "white_wine_vinegar"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 tsp toasted sesame oil",
+     "k": [
+      [
+       "sesame_oil"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    }
+   ],
+   "steps": [
+    "Combine everything and blend until smooth with a whisk, food processor, or blender, or warm it all in a small saucepan just until the peanut butter melts.",
+    "Taste and adjust the seasoning.",
+    "Serve warm, chilled, or at room temperature."
+   ],
    "serve": {},
    "base": "",
-   "note": "Saved as a link only. Full recipe at the source.",
+   "note": "Keeps up to 10 days refrigerated in an airtight container; it thickens when cold, so stir and warm it gently before using.",
    "fave": true,
    "url": "https://theviewfromgreatisland.com/thai-peanut-sauce-recipe/",
-   "link": true,
+   "link": false,
    "site": "https://food.emilyblackwell.com/recipes/peanut-sauce.html"
   },
   {
@@ -28512,25 +29594,178 @@
     "Dessert"
    ],
    "method_type": "",
-   "servings": null,
-   "time": 0,
-   "timeText": "",
+   "servings": 12,
+   "time": 45,
+   "timeText": "45 min",
    "cook": "",
    "freezer": "",
-   "kcal": null,
-   "p": null,
-   "c": null,
-   "f": null,
+   "kcal": 320,
+   "p": 4,
+   "c": 38,
+   "f": 18,
    "fi": null,
    "lean": "Any",
-   "req": [],
-   "steps": [],
+   "req": [
+    {
+     "l": "2 1/2 cups all-purpose flour",
+     "k": [
+      [
+       "flour"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "2 tsp baking powder",
+     "k": [
+      [
+       "baking_powder"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 tsp baking soda",
+     "k": [
+      [
+       "baking_soda"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1/2 tsp ground nutmeg",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "1 tsp salt",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "1/2 cup unsalted butter, softened",
+     "k": [
+      [
+       "butter"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "3/4 cup granulated sugar",
+     "k": [
+      [
+       "sugar"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "2 large eggs",
+     "k": [
+      [
+       "eggs"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 tsp vanilla extract",
+     "k": [
+      [
+       "vanilla"
+      ],
+      [
+       "extract"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "3/4 cup buttermilk",
+     "k": [
+      [
+       "buttermilk"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Glaze: 1/2 cup unsalted butter",
+     "k": [
+      [
+       "butter"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Glaze: 1 1/2 cups powdered sugar",
+     "k": [
+      [
+       "sugar"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Glaze: 2 tbsp pure maple syrup",
+     "k": [
+      [
+       "maple"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Glaze: 1 tsp vanilla bean paste (or vanilla extract)",
+     "k": [
+      [
+       "extract",
+       "vanilla"
+      ]
+     ],
+     "opt": false,
+     "spice": true
+    },
+    {
+     "l": "Glaze: 1-2 tbsp milk, as needed to thin",
+     "k": [
+      [
+       "milk"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    }
+   ],
+   "steps": [
+    "Heat oven to 350F and grease or parchment-line a 9x13 pan.",
+    "Whisk flour, baking powder, baking soda, nutmeg, and salt in a bowl.",
+    "Cream the softened butter and sugar until fluffy, beat in eggs one at a time, then add vanilla.",
+    "Add the dry mix and buttermilk alternately, beginning and ending with dry, mixing just until combined.",
+    "Spread batter in the pan and bake 22-25 minutes until a toothpick comes out clean; cool completely.",
+    "For the glaze, cook butter in a small saucepan over medium heat until golden and nutty, then take off the heat and whisk in powdered sugar, maple syrup, and vanilla bean paste, thinning with milk if needed.",
+    "Spread the warm glaze over the cooled bars and let it set 10-15 minutes before slicing."
+   ],
    "serve": {},
    "base": "",
-   "note": "Saved as a link only. Full recipe at the source.",
+   "note": "Store glazed bars airtight at room temperature up to 2 days. To freeze, freeze unglazed and glaze after thawing.",
    "fave": false,
    "url": "https://epicureannest.com/old-fashioned-buttermilk-donut-bars/",
-   "link": true,
+   "link": false,
    "site": "https://food.emilyblackwell.com/recipes/old-fashioned-buttermilk-donut-bars-with-brown-butter-maple-vanilla-bean-glaze.html"
   },
   {
@@ -28543,9 +29778,9 @@
     "Dessert"
    ],
    "method_type": "",
-   "servings": null,
-   "time": 0,
-   "timeText": "",
+   "servings": 16,
+   "time": 45,
+   "timeText": "45 min",
    "cook": "",
    "freezer": "",
    "kcal": null,
@@ -28554,14 +29789,97 @@
    "f": null,
    "fi": null,
    "lean": "Any",
-   "req": [],
-   "steps": [],
+   "req": [
+    {
+     "l": "8 tablespoons unsalted butter",
+     "k": [
+      [
+       "butter"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1/2 cup milk",
+     "k": [
+      [
+       "milk"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1/2 cup granulated white sugar",
+     "k": [
+      [
+       "sugar"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1/2 cup brown sugar, firmly packed",
+     "k": [
+      [
+       "brown_sugar"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Pinch of salt",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "1 teaspoon vanilla extract",
+     "k": [
+      [
+       "vanilla"
+      ],
+      [
+       "extract"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1/2 cup unsweetened cocoa powder",
+     "k": [
+      [
+       "cocoa"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "2 cups confectioners' sugar",
+     "k": [
+      [
+       "sugar"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    }
+   ],
+   "steps": [
+    "Bring butter, both sugars, milk, and salt to a boil in a saucepan, then cook on low for 6 minutes, stirring the whole time.",
+    "Cool briefly, then stir in vanilla, cocoa, and confectioners' sugar until smooth.",
+    "Turn the fudge out onto a baking sheet or silicone mat to cool, form it into a log, wrap in plastic, and chill about 30 minutes."
+   ],
    "serve": {},
    "base": "",
-   "note": "Saved as a link only. Full recipe at the source.",
+   "note": "Keeps about 2 weeks refrigerated in a covered container or up to 3 months frozen. Do not cook the caramel past 6 minutes or it can scorch.",
    "fave": false,
    "url": "https://100krecipes.com/mackinac-island-fudge/",
-   "link": true,
+   "link": false,
    "site": "https://food.emilyblackwell.com/recipes/mackinac-island-fudge.html"
   },
   {
@@ -29367,25 +30685,139 @@
     "Dessert"
    ],
    "method_type": "",
-   "servings": null,
-   "time": 0,
-   "timeText": "",
+   "servings": 12,
+   "time": 40,
+   "timeText": "40 min",
    "cook": "",
    "freezer": "",
-   "kcal": null,
+   "kcal": 335,
    "p": null,
    "c": null,
    "f": null,
    "fi": null,
    "lean": "Any",
-   "req": [],
-   "steps": [],
+   "req": [
+    {
+     "l": "1 1/2 cups all-purpose flour",
+     "k": [
+      [
+       "flour"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 teaspoon baking powder",
+     "k": [
+      [
+       "baking_powder"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1/2 teaspoon salt",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "1 1/2 cups light brown sugar, packed",
+     "k": [
+      [
+       "brown_sugar"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "12 tablespoons unsalted butter, melted and cooled",
+     "k": [
+      [
+       "butter"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "2 large eggs",
+     "k": [
+      [
+       "eggs"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 1/2 teaspoons vanilla extract",
+     "k": [
+      [
+       "vanilla"
+      ],
+      [
+       "extract"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1/2 cup white chocolate chips",
+     "k": [
+      [
+       "chocolate"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1/2 cup caramel bits, or 12 unwrapped caramel squares",
+     "k": [
+      [
+       "x_caramel_bits"
+      ]
+     ],
+     "opt": false,
+     "free": true
+    },
+    {
+     "l": "2 tablespoons heavy cream",
+     "k": [
+      [
+       "heavy_cream"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Flaky sea salt, for topping",
+     "k": [],
+     "spice": true
+    }
+   ],
+   "steps": [
+    "Heat oven to 350F, line a 13x9 pan with a parchment sling, and coat with baking spray.",
+    "Whisk flour, baking powder, and salt together.",
+    "In another bowl, stir brown sugar and melted butter until smooth, then whisk in eggs and vanilla.",
+    "Fold the dry ingredients into the wet with a spatula, then fold in the white chocolate chips.",
+    "Microwave caramel and cream at half power in 30-second bursts, stirring between, until smooth; let cool until pourable.",
+    "Spread the batter in the pan, drizzle with caramel, and swirl by dragging a knife across the drizzle lines.",
+    "Bake 30-35 minutes, rotating halfway, until shiny, lightly cracked, and set rather than jiggly.",
+    "Sprinkle flaky salt over the top as soon as it comes out of the oven.",
+    "Cool 10 minutes in the pan, lift out by the parchment, cool fully on a rack, and cut into bars."
+   ],
    "serve": {},
    "base": "",
-   "note": "Saved as a link only. Full recipe at the source.",
+   "note": "Bars freeze well; flash-freeze in a single layer or separate with parchment, then thaw or microwave 10-15 seconds.",
    "fave": false,
    "url": "https://farmettekitchen.com/salted-caramel-blondies/",
-   "link": true,
+   "link": false,
    "site": "https://food.emilyblackwell.com/recipes/salted-caramel-blondies.html"
   },
   {
@@ -30169,9 +31601,6 @@
        "greek_yogurt"
       ],
       [
-       "tzatziki"
-      ],
-      [
        "garlic"
       ],
       [
@@ -30727,25 +32156,115 @@
     "Lunch"
    ],
    "method_type": "",
-   "servings": null,
-   "time": 0,
-   "timeText": "",
+   "servings": 4,
+   "time": 27,
+   "timeText": "27 min",
    "cook": "",
    "freezer": "",
-   "kcal": null,
-   "p": null,
-   "c": null,
-   "f": null,
+   "kcal": 390,
+   "p": 18,
+   "c": 36,
+   "f": 20,
    "fi": null,
    "lean": "Any",
-   "req": [],
-   "steps": [],
+   "req": [
+    {
+     "l": "1 ball pizza dough",
+     "k": [
+      [
+       "x_ball_pizza_dough"
+      ]
+     ],
+     "opt": false,
+     "free": true
+    },
+    {
+     "l": "1/2 cup pizza sauce or crushed San Marzano tomatoes",
+     "k": [
+      [
+       "diced_tomatoes",
+       "fresh_tomato",
+       "tomato_sauce"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 cup shredded mozzarella cheese",
+     "k": [
+      [
+       "mozzarella"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1/2 cup cooked spicy Italian sausage, crumbled",
+     "k": [
+      [
+       "sausage"
+      ]
+     ],
+     "opt": false,
+     "spice": true
+    },
+    {
+     "l": "1/2 cup ricotta cheese",
+     "k": [
+      [
+       "ricotta"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1/4 tsp red pepper flakes (optional)",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "1 tbsp olive oil",
+     "k": [
+      [
+       "olive_oil"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Hot honey, for drizzling",
+     "k": [
+      [
+       "honey"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Fresh basil leaves, to garnish (optional)",
+     "k": [],
+     "spice": true
+    }
+   ],
+   "steps": [
+    "Heat the oven to 475°F with a pizza stone or baking sheet inside.",
+    "Roll the dough out on a floured surface and move it to parchment.",
+    "Spread on the sauce, then add the mozzarella and crumbled sausage.",
+    "Dot with spoonfuls of ricotta, add the pepper flakes if using, and drizzle with olive oil.",
+    "Slide the pizza, parchment and all, onto the hot stone and bake 10 to 12 minutes until the crust is golden and the cheese bubbles.",
+    "Finish with a drizzle of hot honey and basil, then slice."
+   ],
    "serve": {},
    "base": "",
-   "note": "Saved as a link only. Full recipe at the source.",
+   "note": "Makes one large pizza, about 8 slices; a serving is 2 slices.",
    "fave": false,
    "url": "https://cooktune.com/sausage-ricotta-honey-hot-pizza/",
-   "link": true,
+   "link": false,
    "site": "https://food.emilyblackwell.com/recipes/sausage-ricotta-honey-hot-pizza.html"
   },
   {
@@ -32612,25 +34131,142 @@
     "Lunch"
    ],
    "method_type": "",
-   "servings": null,
-   "time": 0,
-   "timeText": "",
+   "servings": 4,
+   "time": 40,
+   "timeText": "40 min",
    "cook": "",
    "freezer": "",
-   "kcal": null,
-   "p": null,
-   "c": null,
-   "f": null,
+   "kcal": 745,
+   "p": 36,
+   "c": 58,
+   "f": 42,
    "fi": null,
-   "lean": "Any",
-   "req": [],
-   "steps": [],
+   "lean": "Bike",
+   "req": [
+    {
+     "l": "1 lb ground beef (80/20)",
+     "k": [
+      [
+       "ground_beef"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 cup breadcrumbs",
+     "k": [
+      [
+       "breadcrumbs"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 egg",
+     "k": [
+      [
+       "eggs"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 tsp garlic powder",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "1 tsp onion powder",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "1 tsp smoked paprika",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "1/2 tsp salt",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "1/4 tsp black pepper",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "1 tbsp olive oil",
+     "k": [
+      [
+       "olive_oil"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 cup bourbon BBQ sauce",
+     "k": [
+      [
+       "bbq"
+      ],
+      [
+       "spirits"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 cup shredded cheddar cheese",
+     "k": [
+      [
+       "cheddar"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "4 sub rolls",
+     "k": [
+      [
+       "x_sub_rolls"
+      ]
+     ],
+     "opt": false,
+     "free": true
+    },
+    {
+     "l": "8 slices crispy bacon",
+     "k": [
+      [
+       "bacon"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    }
+   ],
+   "steps": [
+    "Preheat oven to 375F.",
+    "Mix beef, breadcrumbs, egg, and seasonings just until combined, then roll into 16-20 meatballs about 1.5 inches wide.",
+    "Heat oil in a large skillet over medium and brown the meatballs on all sides in a single layer, 5-7 minutes, working in batches if needed.",
+    "Put all meatballs back in the pan, add the BBQ sauce, reduce heat, and simmer 10 minutes, stirring gently.",
+    "Meanwhile, split the rolls lengthwise without cutting through and toast them on a baking sheet in the oven about 5 minutes.",
+    "Fill each roll with 4-5 meatballs plus extra sauce, then top with 1/4 cup cheddar and 2 slices bacon.",
+    "Bake 2-3 minutes more until the cheese melts and serve immediately."
+   ],
    "serve": {},
    "base": "",
-   "note": "Saved as a link only. Full recipe at the source.",
+   "note": "Meatballs can be made ahead and frozen raw or cooked for up to 3 months. Let them sear before turning so they hold together.",
    "fave": false,
    "url": "https://timeofrecipes.com/bourbon-bbq-bacon-cheeseburger-meatball-subs/",
-   "link": true,
+   "link": false,
    "site": "https://food.emilyblackwell.com/recipes/bourbon-bbq-bacon-cheeseburger-meatball-sub.html"
   },
   {
@@ -32937,9 +34573,9 @@
     "Lunch"
    ],
    "method_type": "",
-   "servings": null,
-   "time": 0,
-   "timeText": "",
+   "servings": 3,
+   "time": 40,
+   "timeText": "40 min",
    "cook": "",
    "freezer": "",
    "kcal": null,
@@ -32948,14 +34584,210 @@
    "f": null,
    "fi": null,
    "lean": "Any",
-   "req": [],
-   "steps": [],
+   "req": [
+    {
+     "l": "1 lb baby Yukon potatoes",
+     "k": [
+      [
+       "potato"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 head broccoli, cut into florets",
+     "k": [
+      [
+       "broccoli"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "1 can (15 oz) chickpeas, drained and rinsed",
+     "k": [
+      [
+       "chickpeas"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "2 1/2 tbsp oil",
+     "k": [
+      [
+       "olive_oil"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Kosher salt",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "1 tbsp nutritional yeast",
+     "k": [
+      [
+       "nooch"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "2 tbsp fresh dill, minced",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "1 1/2 tsp garlic powder",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "1/2 tsp ground coriander",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "1/2 tsp thyme",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "2 cups shredded lacinato kale",
+     "k": [
+      [
+       "kale"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "2 cups shredded romaine lettuce",
+     "k": [
+      [
+       "greens"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Pickled red onions, for serving",
+     "k": [
+      [
+       "onion"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dressing: 1 cup unsweetened plain plant-based yogurt",
+     "k": [
+      [
+       "greek_yogurt"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dressing: 1 garlic clove, grated",
+     "k": [
+      [
+       "garlic"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dressing: zest and juice of 1 lime",
+     "k": [
+      [
+       "lime"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dressing: 1 tbsp red wine vinegar",
+     "k": [
+      [
+       "red_wine_vinegar"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dressing: 2 tbsp extra virgin olive oil",
+     "k": [
+      [
+       "olive_oil"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dressing: 1/2 cup fresh dill, woody stems removed",
+     "k": [],
+     "spice": true
+    },
+    {
+     "l": "Dressing: 1/2 cup fresh parsley, woody stems removed",
+     "k": [
+      [
+       "parsley"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dressing: 1 tbsp nutritional yeast",
+     "k": [
+      [
+       "nooch"
+      ]
+     ],
+     "opt": false,
+     "spice": false
+    },
+    {
+     "l": "Dressing: 1/4 tsp kosher salt, or more as needed",
+     "k": [],
+     "spice": true
+    }
+   ],
+   "steps": [
+    "Boil the potatoes in well-salted water about 10 minutes, then cool.",
+    "Blend all dressing ingredients with an immersion blender until smooth and adjust salt.",
+    "Dry the rinsed chickpeas thoroughly with a towel.",
+    "Heat oven to 425F. Toss potatoes with 1 tbsp oil, the nutritional yeast, and salt, place on half of a baking sheet, and gently smash.",
+    "Toss chickpeas with 1 tbsp oil and salt, spread on the other half of the sheet, and roast on the lower rack 20 minutes.",
+    "Scatter the minced dill and 1 tsp garlic powder over the tray, toss, and roast 10-15 minutes more.",
+    "Toss broccoli with the remaining oil, 1/2 tsp garlic powder, coriander, thyme, and salt, and roast cut side down on the middle rack 20-25 minutes until browned underneath; chop roughly.",
+    "Massage kale with 2 tbsp dressing and a pinch of salt, then add romaine, broccoli, potatoes, and 1/2 cup dressing and toss.",
+    "Divide among plates and finish with chickpeas, pickled onions, and more dressing."
+   ],
    "serve": {},
    "base": "",
-   "note": "Saved as a link only. Full recipe at the source.",
+   "note": "Potatoes, dressing, and dried chickpeas can all be prepped ahead and refrigerated. Get the chickpeas as dry as possible so they crisp.",
    "fave": false,
    "url": "https://plantbasedrdblog.com/2024/05/green-goddess-smashed-potato-salad/",
-   "link": true,
+   "link": false,
    "site": "https://food.emilyblackwell.com/recipes/green-goddess-smashed-potato-salad.html"
   },
   {
@@ -35016,6 +36848,10 @@
    "l": "Mango",
    "g": "Produce"
   },
+  "peaches": {
+   "l": "Peaches",
+   "g": "Produce"
+  },
   "rhubarb": {
    "l": "Rhubarb",
    "g": "Produce"
@@ -36012,12 +37848,20 @@
    "l": "Salad herbs",
    "g": "Other"
   },
+  "x_shortening": {
+   "l": "Shortening",
+   "g": "Other"
+  },
   "x_bang_bang_sauce": {
    "l": "Bang bang sauce",
    "g": "Other"
   },
   "x_simple_syrup": {
    "l": "Simple syrup",
+   "g": "Other"
+  },
+  "x_roasted_seasoned_seaweed": {
+   "l": "Roasted seasoned seaweed",
    "g": "Other"
   },
   "x_ball_pizza_dough": {
@@ -36028,8 +37872,20 @@
    "l": "Nonpareil sprinkles",
    "g": "Other"
   },
+  "x_filtered_water": {
+   "l": "Filtered water",
+   "g": "Other"
+  },
+  "x_chili_paste": {
+   "l": "Chili paste",
+   "g": "Other"
+  },
   "x_batch_crumble_topping": {
    "l": "Batch crumble topping",
+   "g": "Other"
+  },
+  "x_caramel_bits": {
+   "l": "Caramel bits",
    "g": "Other"
   },
   "x_chilies": {
@@ -36042,6 +37898,10 @@
   },
   "x_yellow_miso_paste": {
    "l": "Yellow miso paste",
+   "g": "Other"
+  },
+  "x_sub_rolls": {
+   "l": "Sub rolls",
    "g": "Other"
   },
   "x_yuca": {
@@ -36857,6 +38717,12 @@
    "mango",
    [
     "mango"
+   ]
+  ],
+  [
+   "peaches",
+   [
+    "\\bpeach(es)?\\b(?! jam| preserves| schnapps)"
    ]
   ],
   [

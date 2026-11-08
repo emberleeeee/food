@@ -39,9 +39,24 @@ Build bowls with 1/2 cup rice, hummus, cauliflower, chicken, pickled onion and h
 #NOTE
 The pickled onions keep for two weeks and brighten almost any bowl.
 
-@@ Crunchy Thai Chickpea Salad | Meal | fave | https://eatingwithyourhands.com/crunchy-thai-chickpea-salad/ | | |
+@@ Crunchy Thai Chickpea Salad | Meal | fave | https://eatingwithyourhands.com/crunchy-thai-chickpea-salad/ | 4 | 15 min |
+#ING
+1 can chickpeas, rinsed and drained
+1 medium cucumber, chopped
+1 large red bell pepper, diced
+1 cup shredded carrots
+1/4 cup cilantro, finely chopped
+Dressing: 3 tbsp lime juice
+Dressing: 2 tbsp peanut butter
+Dressing: 1 tbsp toasted sesame oil
+Dressing: 1 tbsp honey or maple syrup
+Dressing: 1 to 2 tbsp sriracha sauce
+#STEP
+Combine the chickpeas, cucumber, bell pepper, carrots and cilantro in a large bowl.
+Whisk the lime juice, peanut butter, sesame oil, honey and sriracha until smooth, thinning with a splash of water if needed.
+Toss the salad with the dressing and serve, or chill until ready to eat.
 #NOTE
-Saved as a link only. Full recipe at the source.
+No cooking, so it's an easy meal-prep lunch; it holds in the fridge for a few days. Use less sriracha for a milder dressing.
 
 @@ Salmon Cakes | Dinner | fave | https://letseatcuisine.com/salmon-cakes/ | 4 | 5 min prep, 25 min cook |
 #ING
@@ -206,9 +221,28 @@ Warm the flatbreads, rub with the cut garlic, and spoon the mixture on top.
 #NOTE
 For meal prep, leave out the avocado and add it right before serving. The mix tastes best after marinating an hour.
 
-@@ Buffalo Deviled Eggs | Side, Snack | fave | https://www.cookedandloved.com/recipes/buffalo-deviled-eggs-with-crispy-bacon | | |
+@@ Buffalo Deviled Eggs | Side, Snack | fave | https://www.cookedandloved.com/recipes/buffalo-deviled-eggs-with-crispy-bacon | 12 | 30 min | 92,4,0,8
+#ING
+6 large eggs
+3 rashers bacon, diced
+Filling: 1 tablespoon Tabasco or Frank's Hot Sauce
+Filling: 2 tablespoons butter or ghee
+Filling: 1/2 teaspoon garlic powder
+Filling: 1/2 teaspoon onion powder
+Filling: 1/4 teaspoon salt
+Filling: 1 tablespoon mayonnaise
+Topping: 1 tablespoon mayonnaise
+Topping: 3-4 drops hot sauce
+#STEP
+Start the eggs in cold water, bring to a boil and cook 6-7 minutes, turning them a few times early on to center the yolks, then chill in very cold water.
+Meanwhile fry the diced bacon in a little oil until crisp and set aside.
+Peel and halve the eggs lengthwise and remove the yolks.
+Melt the butter over medium-high heat with the hot sauce, garlic powder, onion powder and salt.
+Mash the yolks into the warm sauce until smooth, then mix in 1 tablespoon mayo and half the bacon.
+Fill the egg whites with the yolk mixture, pressing it in lightly.
+Stir the remaining mayo with a few drops of hot sauce, then top each egg with a small dab of it and the rest of the bacon.
 #NOTE
-Saved as a link only. Full recipe at the source.
+Filled eggs keep a day or two in the fridge; add the spicy mayo and bacon right before serving. Nutrition is per egg half, about 2 halves per person.
 
 @@ Baked Shredded Brussels Sprout Salad with Smashed Potatoes | Side | fave | https://plantbasedrdblog.com/2024/02/shredded-brussels-sprout-salad/ | 4 | |
 #ING

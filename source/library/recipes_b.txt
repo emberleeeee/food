@@ -162,9 +162,23 @@ Beat in the butter and cheese vigorously, season with salt and serve immediately
 #NOTE
 You can half-cook it, spread it out to cool, and finish it when guests arrive. Keep it soupy, not stiff.
 
-@@ Reese's Eggs | Dessert | | https://www.sixsistersstuff.com/recipe/homemade-reeses-eggs/ | | |
+@@ Reese's Eggs | Dessert |  | https://www.sixsistersstuff.com/recipe/homemade-reeses-eggs/ | 20 | 45 min | 216,5,22,13
+#ING
+3 cups powdered sugar
+1 1/2 cups creamy or crunchy peanut butter
+1/4 cup butter or margarine, melted
+2 tablespoons milk
+22 oz milk chocolate chips (two 11-oz bags, divided)
+2 tablespoons shortening
+#STEP
+Beat the powdered sugar, peanut butter and melted butter together; it will be crumbly until you add the milk and keep beating until soft.
+Working with 1-2 cups at a time, roll the dough about 1/2 inch thick on a floured surface and cut egg shapes with an oval cutter.
+Arrange the eggs on a baking sheet and freeze at least 1 hour.
+Microwave one bag of chocolate chips with 1 tablespoon shortening until melted, thinning with a bit more shortening if needed.
+Fully dip each frozen egg in chocolate and let it set on wax paper.
+Melt the second bag with more shortening when you run low.
 #NOTE
-Saved as a link only. Full recipe at the source.
+You need an oval or egg-shaped cookie cutter, about 2 1/2 inches long. Store airtight in the fridge or freezer and let frozen eggs sit about 15 minutes before eating.
 
 @@ Shrimp Sushi Stacks | Dinner, Meal | fave | | 2 | 30 min |
 #ING
@@ -248,9 +262,29 @@ Meanwhile cook the rice, toss the cabbage and green onion greens with the slaw d
 Roast the salmon on an oiled foil-lined pan at 400°F for 6–8 minutes, then broil about 1 minute until crisp.
 Build bowls: 1/2 cup rice, slaw, salmon, avocado and cucumber. Top with nori, sesame seeds, panko and spicy mayo.
 
-@@ French Onion Baked Lentils and Farro | Dinner | fave | https://smittenkitchen.com/2024/01/french-onion-baked-lentils-and-farro/ | | |
+@@ French Onion Baked Lentils and Farro | Dinner | fave | https://smittenkitchen.com/2024/01/french-onion-baked-lentils-and-farro/ | 6 | 1 hr 45 min | 
+#ING
+2 lb (910 g) yellow onions (4 large or 5 medium), sliced
+2 tbsp (30 g) unsalted butter
+1 tbsp (15 g) olive oil
+Kosher salt and black pepper
+2 tbsp (30 ml) dry sherry, vermouth, or white wine (optional)
+2 garlic cloves, minced
+1 1/2 cups (300 g) dried farro
+3/4 cup (135 g) dried lentils (green/le puy or brown/italian preferred)
+A few sprigs fresh thyme
+6 cups (1.4 L) vegetable broth, plus extra splashes if needed
+2 cups (225 g) coarsely grated Gruyère
+#STEP
+Melt the butter with the oil in a large deep pan, ovenproof if possible, add the onions, cover and let them sweat on low for 15-20 minutes.
+Uncover, raise the heat, salt well (about 2 tsp kosher salt) and cook, stirring often, about 20 minutes more until deep brown and jammy, lowering the heat once the liquid is gone.
+Heat the oven to 375F (190C).
+Stir in the garlic for a minute, then add the sherry or wine if using and cook it off.
+Toast the farro in the pan for 2 minutes, then add the lentils, broth and thyme, bring to a simmer and season with salt and pepper; move to a baking dish if the pan isn't ovenproof.
+Cover and bake 40-50 minutes, stirring once halfway, until the grains and lentils are tender, adding 1/4-1/2 cup more broth if it dries out; it should stay loose like risotto.
+Pull out the thyme stems, cover the top with Gruyère and broil until browned.
 #NOTE
-Saved as a link only. Full recipe at the source.
+Keeps 4-5 days in the fridge; reheat at 350F. The base can be made a few days ahead, loosened with broth when reheated, and topped with cheese and broiled just before serving.
 
 @@ Tuscan Orzo Bake | Dinner | fave | | 4 | 45 min |
 #ING

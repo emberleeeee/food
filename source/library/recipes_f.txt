@@ -145,9 +145,23 @@ Syrup: 2 tbsp each black peppercorns, grains of paradise and coriander seeds; 1 
 For the syrup, toast the spices 2–3 minutes, add the sugars and water, boil, then simmer 2 minutes. Add the muddled curry leaves, cover 1 hour and strain.
 Shake the rum, lime and syrup with ice, strain into a flute and top with champagne.
 
-@@ Mint and Basil Lemonade Mocktail | Cocktail | fave | https://oursaltykitchen.com/mint-basil-lemonade/ | | |
+@@ Mint and Basil Lemonade Mocktail | Cocktail | fave | https://oursaltykitchen.com/mint-basil-lemonade/ | 8 | 20 min | 77,0,21,0
+#ING
+1/2 c fresh basil leaves, plus extra sprigs for garnish
+1/2 c fresh mint leaves, plus extra sprigs for garnish
+1/2 c honey
+8 c filtered water, divided
+1.5-2 c fresh squeezed lemon juice
+#STEP
+Muddle the basil and mint in a mortar and pestle or a small bowl.
+Warm the honey with 1/2 cup of the water until just barely boiling, stirring to dissolve, then take off the heat.
+Pour the warm syrup over the herbs and let it steep at room temperature for 30 minutes up to several hours.
+Strain the herb syrup into a pitcher or quart jar.
+Juice 8-10 lemons to get 1.5-2 cups.
+Combine the syrup, lemon juice and remaining water in a large pitcher, add 2 cups ice and stir.
+Serve over ice with a sprig of mint and basil.
 #NOTE
-Saved as a link only. Full recipe at the source.
+Steep the syrup longer for more herb flavor. For a sparkling version, mix only the syrup and lemon juice as a base and top 1/3 cup of it with sparkling water over ice.
 
 @@ Chicken, Cauliflower and Chickpea Curry | Dinner | | | 3 | 40 min | 560,42,,
 #ING
@@ -212,9 +226,25 @@ Whisk with the yolks in a bowl over barely simmering water until pale, thick and
 Off the heat, whisk in the butter a few drops at a time, then a ladle at a time, thinning with lemon if too thick.
 Season, strain and serve within 90 minutes, kept warm.
 
-@@ Thai Peanut Sauce | Side | fave | https://theviewfromgreatisland.com/thai-peanut-sauce-recipe/ | | |
+@@ Thai Peanut Sauce | Side | fave | https://theviewfromgreatisland.com/thai-peanut-sauce-recipe/ |  |  |
+#ING
+1/2 cup unsweetened coconut milk (from a can)
+1/2 cup creamy peanut butter
+2 Tbsp soy sauce
+2 Tbsp brown sugar
+1 Tbsp lime juice
+1 Tbsp fish sauce
+1 Tbsp chili paste
+2 cloves garlic, minced
+1 tsp ginger, grated
+1 tsp rice wine vinegar
+1 tsp toasted sesame oil
+#STEP
+Combine everything and blend until smooth with a whisk, food processor, or blender, or warm it all in a small saucepan just until the peanut butter melts.
+Taste and adjust the seasoning.
+Serve warm, chilled, or at room temperature.
 #NOTE
-Saved as a link only. Full recipe at the source.
+Keeps up to 10 days refrigerated in an airtight container; it thickens when cold, so stir and warm it gently before using.
 
 @@ Chili Lime Chickpea and Cauliflower Wrap | Dinner, Meal | fave | https://plantbasedrdblog.com/2024/01/chili-lime-chickpea-cauliflower-wrap/ | 4 | 45 min |
 #ING

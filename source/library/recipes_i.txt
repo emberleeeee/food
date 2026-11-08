@@ -56,9 +56,31 @@ Toast seam-side down in a skillet until crisp.
 #NOTE
 Marked "needs improvement" in your notes. Calories are from your own tally; adding egg or Greek yogurt would lift the protein.
 
-@@ Bourbon BBQ Bacon Cheeseburger Meatball Subs | Dinner | | https://timeofrecipes.com/bourbon-bbq-bacon-cheeseburger-meatball-subs/ | | |
+@@ Bourbon BBQ Bacon Cheeseburger Meatball Subs | Dinner |  | https://timeofrecipes.com/bourbon-bbq-bacon-cheeseburger-meatball-subs/ | 4 | 40 min | 745,36,58,42
+#ING
+1 lb ground beef (80/20)
+1 cup breadcrumbs
+1 egg
+1 tsp garlic powder
+1 tsp onion powder
+1 tsp smoked paprika
+1/2 tsp salt
+1/4 tsp black pepper
+1 tbsp olive oil
+1 cup bourbon BBQ sauce
+1 cup shredded cheddar cheese
+4 sub rolls
+8 slices crispy bacon
+#STEP
+Preheat oven to 375F.
+Mix beef, breadcrumbs, egg, and seasonings just until combined, then roll into 16-20 meatballs about 1.5 inches wide.
+Heat oil in a large skillet over medium and brown the meatballs on all sides in a single layer, 5-7 minutes, working in batches if needed.
+Put all meatballs back in the pan, add the BBQ sauce, reduce heat, and simmer 10 minutes, stirring gently.
+Meanwhile, split the rolls lengthwise without cutting through and toast them on a baking sheet in the oven about 5 minutes.
+Fill each roll with 4-5 meatballs plus extra sauce, then top with 1/4 cup cheddar and 2 slices bacon.
+Bake 2-3 minutes more until the cheese melts and serve immediately.
 #NOTE
-Saved as a link only. Full recipe at the source.
+Meatballs can be made ahead and frozen raw or cooked for up to 3 months. Let them sear before turning so they hold together.
 
 @@ Chickpea, Beet & Feta Salad with Lemon-Garlic Vinaigrette | Dinner, Lunch | | | 2 | 10 min |
 #ING
@@ -97,9 +119,42 @@ Whisk the oil, lime, vinegar, curry powder, maple, salt, turmeric and garam masa
 Stir in the chickpeas, celery, raisins, onion and cilantro.
 Serve over greens, topped with cashews.
 
-@@ Green Goddess Smashed Potato Salad | Dinner, Meal | | https://plantbasedrdblog.com/2024/05/green-goddess-smashed-potato-salad/ | | |
+@@ Green Goddess Smashed Potato Salad | Dinner, Meal |  | https://plantbasedrdblog.com/2024/05/green-goddess-smashed-potato-salad/ | 3 | 40 min |
+#ING
+1 lb baby Yukon potatoes
+1 head broccoli, cut into florets
+1 can (15 oz) chickpeas, drained and rinsed
+2 1/2 tbsp oil
+Kosher salt
+1 tbsp nutritional yeast
+2 tbsp fresh dill, minced
+1 1/2 tsp garlic powder
+1/2 tsp ground coriander
+1/2 tsp thyme
+2 cups shredded lacinato kale
+2 cups shredded romaine lettuce
+Pickled red onions, for serving
+Dressing: 1 cup unsweetened plain plant-based yogurt
+Dressing: 1 garlic clove, grated
+Dressing: zest and juice of 1 lime
+Dressing: 1 tbsp red wine vinegar
+Dressing: 2 tbsp extra virgin olive oil
+Dressing: 1/2 cup fresh dill, woody stems removed
+Dressing: 1/2 cup fresh parsley, woody stems removed
+Dressing: 1 tbsp nutritional yeast
+Dressing: 1/4 tsp kosher salt, or more as needed
+#STEP
+Boil the potatoes in well-salted water about 10 minutes, then cool.
+Blend all dressing ingredients with an immersion blender until smooth and adjust salt.
+Dry the rinsed chickpeas thoroughly with a towel.
+Heat oven to 425F. Toss potatoes with 1 tbsp oil, the nutritional yeast, and salt, place on half of a baking sheet, and gently smash.
+Toss chickpeas with 1 tbsp oil and salt, spread on the other half of the sheet, and roast on the lower rack 20 minutes.
+Scatter the minced dill and 1 tsp garlic powder over the tray, toss, and roast 10-15 minutes more.
+Toss broccoli with the remaining oil, 1/2 tsp garlic powder, coriander, thyme, and salt, and roast cut side down on the middle rack 20-25 minutes until browned underneath; chop roughly.
+Massage kale with 2 tbsp dressing and a pinch of salt, then add romaine, broccoli, potatoes, and 1/2 cup dressing and toss.
+Divide among plates and finish with chickpeas, pickled onions, and more dressing.
 #NOTE
-Saved as a link only. Full recipe at the source.
+Potatoes, dressing, and dried chickpeas can all be prepped ahead and refrigerated. Get the chickpeas as dry as possible so they crisp.
 
 @@ Pub Pizza (Chicago Thin Crust) | Dinner | | https://www.youtube.com/watch?v=5mIbyUgNOlo | | |
 #NOTE

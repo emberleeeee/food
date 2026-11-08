@@ -32,11 +32,12 @@ SKIP=re.compile(r'^\W*([\d/½¼¾⅓⅔.\s–-]*(cups?|tbsp|tsp|tablespoons?|tea
 UNITS=r'(cups?|c|tbsp|tbs|tablespoons?|tsp|teaspoons?|g|kg|ml|l|oz|ounces?|lbs?|pounds?|cans?|jars?|packets?|packages?|bunch(es)?|heads?|cloves?|sprigs?|slices?|handfuls?|large|medium|small|whole|big|heaping|scoops?|sheets?|sticks?|pieces?|pints?|quarts?|dash(es)?|drops?)'
 GEN={}
 def generic(l):
+    l=re.sub(r"^\s*[A-Za-z][A-Za-z '&/-]{0,24}:\s+","",l,count=1)
     t=re.sub(r'\(.*?\)','',l.lower())
     t=re.split(r',| for | to | plus |;|:',t)[0]
     t=re.sub(r'[\d/½¼¾⅓⅔⅛.\-–×x]+',' ',t)
     t=re.sub(r'\b'+UNITS+r'\b',' ',t)
-    t=re.sub(r'\b(fresh|frozen|dried|chopped|minced|diced|sliced|grated|thinly|finely|coarsely|cut|into|peeled|of|a|an|the|about|optional|ripe|good|cooked|uncooked|raw|unsweetened|plain|organic|extra|virgin|lightly|beaten|softened|melted|cold|room|temperature|halved|quartered|trimmed|drained|rinsed|seeded|crushed|loosely|packed)\b',' ',t)
+    t=re.sub(r'\b(fresh|frozen|dried|chopped|minced|diced|sliced|grated|thinly|finely|coarsely|cut|into|peeled|of|a|an|the|about|optional|ripe|good|cooked|uncooked|raw|unsweetened|plain|organic|extra|virgin|lightly|beaten|softened|melted|cold|room|temperature|halved|quartered|trimmed|drained|rinsed|seeded|crushed|loosely|packed|very)\b',' ',t)
     t=re.sub(r'\s+',' ',t).strip()
     if len(t)<3: return None
     return ('x_'+re.sub(r'[^a-z0-9]+','_',t).strip('_'), t[:1].upper()+t[1:])
@@ -46,7 +47,7 @@ for i,o in enumerate(N):
         ks,spice=keys_for_line(l)
         opt=bool(re.search(r'optional|to serve|to garnish|for garnish|to top',l,re.I))
         if not ks:
-            if spice or SKIP.search(l): req.append({'l':l,'k':[],'spice':bool(spice)}); continue
+            if spice or SKIP.search(re.sub(r'\(.*?\)','',re.sub(r"^\s*[A-Za-z][A-Za-z '&/-]{0,24}:\s+",'',l,count=1))): req.append({'l':l,'k':[],'spice':bool(spice)}); continue
             g=generic(l)
             if not g: req.append({'l':l,'k':[],'spice':False}); continue
             GEN[g[0]]=g[1]

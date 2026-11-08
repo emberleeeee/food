@@ -3,7 +3,9 @@ from rules import RULES, SPICES, SUBS
 CR=[(k,lab,g,[re.compile(p,re.I) for p in ps]) for k,lab,g,ps in RULES]
 SP=[re.compile(p,re.I) for p in SPICES]
 OVR={"Sausage and broccoli rabe ravioli":"ravioli","Cilantro lime dressing":"dressing_cilantro","Caesar dressing":"dressing_caesar","Almond extract":"extract","Mint extract":"extract","Apple cider":"apple_cider","Hot honey":"honey","Coconut whipping cream":"coconut_cream","Light corn syrup":"corn_syrup","Popcorn kernels":"popcorn","Adobo seasoning":"spice","Tajin":"spice","Tiger sauce":"hot_sauce","Frank's RedHot":"hot_sauce"}
+SECTION=re.compile(r"^\s*[A-Za-z][A-Za-z '&/-]{0,24}:\s+")  # "Topping: ", "Peach jam: " labels name a sub-recipe, not an ingredient
 def keys_for_line(line):
+    line=SECTION.sub("",line,count=1)
     found=[]; rest=line
     for k,lab,g,ps in CR:
         for p in ps:

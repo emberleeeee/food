@@ -105,13 +105,50 @@ Blend the beans, onion and garlic with all the remaining sauce ingredients until
 Sauté the asparagus in the same pan 5–10 minutes.
 Toss the pasta with the asparagus and sauce and top with pepper flakes and more parmesan.
 
-@@ Old-Fashioned Buttermilk Donut Bars | Dessert | | https://epicureannest.com/old-fashioned-buttermilk-donut-bars/ | | |
+@@ Old-Fashioned Buttermilk Donut Bars | Dessert |  | https://epicureannest.com/old-fashioned-buttermilk-donut-bars/ | 12 | 45 min | 320,4,38,18
+#ING
+2 1/2 cups all-purpose flour
+2 tsp baking powder
+1 tsp baking soda
+1/2 tsp ground nutmeg
+1 tsp salt
+1/2 cup unsalted butter, softened
+3/4 cup granulated sugar
+2 large eggs
+1 tsp vanilla extract
+3/4 cup buttermilk
+Glaze: 1/2 cup unsalted butter
+Glaze: 1 1/2 cups powdered sugar
+Glaze: 2 tbsp pure maple syrup
+Glaze: 1 tsp vanilla bean paste (or vanilla extract)
+Glaze: 1-2 tbsp milk, as needed to thin
+#STEP
+Heat oven to 350F and grease or parchment-line a 9x13 pan.
+Whisk flour, baking powder, baking soda, nutmeg, and salt in a bowl.
+Cream the softened butter and sugar until fluffy, beat in eggs one at a time, then add vanilla.
+Add the dry mix and buttermilk alternately, beginning and ending with dry, mixing just until combined.
+Spread batter in the pan and bake 22-25 minutes until a toothpick comes out clean; cool completely.
+For the glaze, cook butter in a small saucepan over medium heat until golden and nutty, then take off the heat and whisk in powdered sugar, maple syrup, and vanilla bean paste, thinning with milk if needed.
+Spread the warm glaze over the cooled bars and let it set 10-15 minutes before slicing.
 #NOTE
-Saved as a link only. Full recipe at the source.
+Store glazed bars airtight at room temperature up to 2 days. To freeze, freeze unglazed and glaze after thawing.
 
-@@ Mackinac Island Fudge | Dessert | | https://100krecipes.com/mackinac-island-fudge/ | | |
+@@ Mackinac Island Fudge | Dessert |  | https://100krecipes.com/mackinac-island-fudge/ | 16 | 45 min |
+#ING
+8 tablespoons unsalted butter
+1/2 cup milk
+1/2 cup granulated white sugar
+1/2 cup brown sugar, firmly packed
+Pinch of salt
+1 teaspoon vanilla extract
+1/2 cup unsweetened cocoa powder
+2 cups confectioners' sugar
+#STEP
+Bring butter, both sugars, milk, and salt to a boil in a saucepan, then cook on low for 6 minutes, stirring the whole time.
+Cool briefly, then stir in vanilla, cocoa, and confectioners' sugar until smooth.
+Turn the fudge out onto a baking sheet or silicone mat to cool, form it into a log, wrap in plastic, and chill about 30 minutes.
 #NOTE
-Saved as a link only. Full recipe at the source.
+Keeps about 2 weeks refrigerated in a covered container or up to 3 months frozen. Do not cook the caramel past 6 minutes or it can scorch.
 
 @@ Conference | Cocktail | | | 1 | 3 min |
 #ING
@@ -220,9 +257,31 @@ Salt and pepper
 Cut slices from the four sides of each tomato (skipping the seedy core) and dice them.
 Toss with the onion, jalapeños, lime juice and oil. Season with salt and pepper.
 
-@@ Salted Caramel Blondies | Dessert | | https://farmettekitchen.com/salted-caramel-blondies/ | | |
+@@ Salted Caramel Blondies | Dessert |  | https://farmettekitchen.com/salted-caramel-blondies/ | 12 | 40 min | 335,,,
+#ING
+1 1/2 cups all-purpose flour
+1 teaspoon baking powder
+1/2 teaspoon salt
+1 1/2 cups light brown sugar, packed
+12 tablespoons unsalted butter, melted and cooled
+2 large eggs
+1 1/2 teaspoons vanilla extract
+1/2 cup white chocolate chips
+1/2 cup caramel bits, or 12 unwrapped caramel squares
+2 tablespoons heavy cream
+Flaky sea salt, for topping
+#STEP
+Heat oven to 350F, line a 13x9 pan with a parchment sling, and coat with baking spray.
+Whisk flour, baking powder, and salt together.
+In another bowl, stir brown sugar and melted butter until smooth, then whisk in eggs and vanilla.
+Fold the dry ingredients into the wet with a spatula, then fold in the white chocolate chips.
+Microwave caramel and cream at half power in 30-second bursts, stirring between, until smooth; let cool until pourable.
+Spread the batter in the pan, drizzle with caramel, and swirl by dragging a knife across the drizzle lines.
+Bake 30-35 minutes, rotating halfway, until shiny, lightly cracked, and set rather than jiggly.
+Sprinkle flaky salt over the top as soon as it comes out of the oven.
+Cool 10 minutes in the pan, lift out by the parchment, cool fully on a rack, and cut into bars.
 #NOTE
-Saved as a link only. Full recipe at the source.
+Bars freeze well; flash-freeze in a single layer or separate with parchment, then thaw or microwave 10-15 seconds.
 
 @@ Rockfish Tacos with Cabbage Slaw | Dinner | | | 2 | 20 min | 520,40,,
 #ING

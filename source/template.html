@@ -795,7 +795,7 @@ async function generate(e){
 const RULES_G=D.rules.map(([k,ps])=>[k,ps.map(p=>new RegExp(p,"gi"))]);
 const SKIP_RX=/^\W*([\d\/½¼¾⅓⅔.\s–-]*(cups?|tbsp|tsp|tablespoons?|teaspoons?|g|ml|oz)?\s*)?(ice |cold |hot |warm |boiling )?water\b|^ice$|^salt|^kosher salt|^sea salt|^salt and|^black pepper|^freshly ground|^pinch|^cooking spray|^neutral oil/i;
 const UNITS_RX=/\b(cups?|c|tbsp|tbs|tablespoons?|tsp|teaspoons?|g|kg|ml|l|oz|ounces?|lbs?|pounds?|cans?|jars?|packets?|packages?|bunch(es)?|heads?|cloves?|sprigs?|slices?|handfuls?|large|medium|small|whole|big|heaping|scoops?|sheets?|sticks?|pieces?|pints?|quarts?|dash(es)?|drops?)\b/g;
-const FILLER_RX=/\b(fresh|frozen|dried|chopped|minced|diced|sliced|grated|thinly|finely|coarsely|cut|into|peeled|of|a|an|the|about|optional|ripe|good|cooked|uncooked|raw|unsweetened|plain|organic|extra|virgin|lightly|beaten|softened|melted|cold|room|temperature|halved|quartered|trimmed|drained|rinsed|seeded|crushed|loosely|packed)\b/g;
+const FILLER_RX=/\b(fresh|frozen|dried|chopped|minced|diced|sliced|grated|thinly|finely|coarsely|cut|into|peeled|of|a|an|the|about|optional|ripe|good|cooked|uncooked|raw|unsweetened|plain|organic|extra|virgin|lightly|beaten|softened|melted|cold|room|temperature|halved|quartered|trimmed|drained|rinsed|seeded|crushed|loosely|packed|very)\b/g;
 function genericKey(l){
   let t=l.toLowerCase().replace(/\(.*?\)/g,"").split(/,| for | to | plus |;|:/)[0];
   t=t.replace(/[\d\/½¼¾⅓⅔⅛.\-–×]+/g," ").replace(UNITS_RX," ").replace(FILLER_RX," ").replace(/\s+/g," ").trim();
@@ -804,15 +804,16 @@ function genericKey(l){
 }
 function lineToReq(raw){
   const l=raw.trim(); if(!l) return null;
+  const body=l.replace(/^\s*[A-Za-z][A-Za-z '&\/-]{0,24}:\s+/,"");
   const opt=/optional|to serve|to garnish|for garnish|to top|to finish/i.test(l);
   const buyM=l.match(/^(.*?)\s*\((?:buy|to buy)\)\s*$/i);
-  let rest=l, ks=[];
+  let rest=body, ks=[];
   for(const [k,rxs] of RULES_G){ for(const rx of rxs){ rx.lastIndex=0; if(rx.test(rest)){ks.push(k); rx.lastIndex=0; rest=rest.replace(rx," "); break;} } }
   const spice=SPICE_RX.some(r=>r.test(l));
   if(!ks.length){
     const ll=l.toLowerCase(); const pm=pantryItems().filter(p=>p.n.length>2&&ll.includes(p.n.toLowerCase())).sort((a,b)=>b.n.length-a.n.length)[0];
     if(pm&&pm.g!=="Spices") return {l,k:[[pm.k]],opt,lab:pm.n};
-    if(spice||SKIP_RX.test(l)) return {l,k:[],spice};
+    if(spice||SKIP_RX.test(body.replace(/\(.*?\)/g,""))) return {l,k:[],spice};
     const g=genericKey(buyM?buyM[1]:l); if(!g) return {l,k:[],spice:false};
     return {l,k:[[g.k]],opt,free:true,lab:g.l};
   }

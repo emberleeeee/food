@@ -246,9 +246,30 @@ Add the dry ingredients and stir until the dough comes together.
 Scoop 28 g balls, roll smooth, cover and chill at least 2 hours.
 Heat the oven to 350°F. Roll the balls in cinnamon sugar and bake 10–12 minutes until dry on top but moist in the cracks.
 
-@@ Kimchi Fried Rice | Side | | https://mykoreankitchen.com/wprm_print/9149 | | |
+@@ Kimchi Fried Rice | Side |  | https://mykoreankitchen.com/wprm_print/9149 | 4 | 15 min | 461,14,41,25
+#ING
+1 cup kimchi, cut into thumbnail size pieces
+150 g bacon (5.3 ounces), cut into thumbnail size pieces
+3 cups steamed short grain rice (or medium grain rice)
+4 x-large eggs, cooked sunny side up or per your preference
+1/2 tsp minced garlic
+1/4 cup kimchi juice
+1/2 Tbsp sesame oil
+1 Tbsp cooking oil
+Optional: 1 pack enoki mushrooms (200 g / 7 ounces), root removed, rinsed and drained
+Garnish: 1 Tbsp toasted sesame seeds
+Garnish: 1/2 stalk green onion, thinly sliced
+Garnish: roasted seasoned seaweed, shredded
+#STEP
+Heat a wok or pan over medium-high, add the cooking oil and stir the garlic for about 10 seconds.
+Add the bacon and cook until roughly half done.
+Add the kimchi and cook until mostly done.
+If using enoki, toss them in for a few seconds, then drop the heat to medium-low.
+Add the rice and kimchi juice and mix until evenly coated.
+Stir in the sesame oil and take the pan off the heat.
+Plate, garnish, and top each serving with an egg.
 #NOTE
-Saved as a link only. Full recipe at the source.
+Use day-old, drier rice so it doesn't go gluey, and kimchi that's at least 2 weeks old (or add 1/2 tsp rice vinegar to the juice). Short on kimchi juice? Use 2 1/2 Tbsp juice plus 1 Tbsp gochujang.
 
 @@ Three-Bean Salad | Lunch | | | 4 | 10 min + chill | 240,11,,
 #ING

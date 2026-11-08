@@ -77,6 +77,7 @@ RULES = [
  ("asparagus","Asparagus","Produce",[r"asparagus"]),
  ("radishes","Radishes","Produce",[r"radish"]),
  ("mango","Mango","Produce",[r"mango"]),
+ ("peaches","Peaches","Produce",[r"\bpeach(es)?\b(?! jam| preserves| schnapps)"]),
  ("rhubarb","Rhubarb","Produce",[r"rhubarb"]),
  ("lemongrass","Lemongrass","Produce",[r"lemongrass"]),
  ("berries","Berries (mixed / strawberries / raspberries)","Produce",[r"mixed berries", r"strawberr(?!y preserves)", r"raspberr(?!y or blackberry jam)", r"\bberries\b"]),

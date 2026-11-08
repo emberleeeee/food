@@ -95,9 +95,30 @@ Char the tortillas and fill with shrimp and slaw. Finish with hot sauce and cila
 #NOTE
 A tart apple like Granny Smith gives the slaw brightness.
 
-@@ Crispy Gochujang Rice Salad | Side | | https://steamykitchen.com/251774-crispy-gochujang-rice-salad.html | | |
+@@ Crispy Gochujang Rice Salad | Side |  | https://steamykitchen.com/251774-crispy-gochujang-rice-salad.html | 4 | 35 min | 645,15,94,25
+#ING
+Rice: 2 cups brown rice, cooked and cooled (or leftover)
+Rice: 2 tsp gochujang
+Rice: 2 tbsp sesame oil
+Rice: 2 tbsp soy sauce
+1 cup peas, steamed
+1 Persian cucumber, chopped
+3 green onions, finely sliced
+1 avocado, diced
+1/4 cup mint, chopped
+1/4 cup cilantro, chopped
+Dressing: 1 tbsp honey
+Dressing: 2 tbsp soy sauce
+Dressing: 1/4 cup tahini
+Dressing: 1/4 cup lime juice
+Dressing: 1/4 cup water
+#STEP
+Heat the oven to 400F and stir together the gochujang, sesame oil and soy sauce, then toss the rice in it.
+Spread the rice on a lined sheet pan and bake 15-20 minutes, stirring and respreading now and then, until crisp.
+Whisk the dressing ingredients until smooth; it looks lumpy at first but comes together.
+Combine the peas, cucumber, green onions, avocado and herbs in a bowl, add the crispy rice, drizzle with dressing and toss gently.
 #NOTE
-Saved as a link only. Full recipe at the source.
+Day-old rice crisps best. To make ahead, store the crispy rice airtight on its own and combine with the salad at serving time.
 
 @@ Rice Pudding Cake with Mango Caramel | Dessert | | | 10 | 1 hr 45 min + cooling |
 #ING
@@ -123,9 +144,51 @@ Unmold and serve slices with caramel and fresh mango.
 #NOTE
 Caramel keeps 1 week; the cake keeps 3 days refrigerated.
 
-@@ Peach Cobbler Cinnamon Rolls | Dessert | | https://cambreabakes.com/peach-cinnamon-rolls/ | | |
+@@ Peach Cobbler Cinnamon Rolls | Dessert |  | https://cambreabakes.com/peach-cinnamon-rolls/ | 12 | 3 hr 30 min | 388,3,42,25
+#ING
+Peach jam: 1 1/2 cups (210 g) fresh ripe peaches, cubed
+Peach jam: 2 tbsp (30 g) granulated sugar
+Peach jam: 1 tsp lemon juice
+Peach jam: 2 tsp cornstarch
+Peach jam: 1 tbsp water
+Filling: 1/2 cup (60 g) very thinly sliced peaches
+Tangzhong: 3/4 cup (155 g) water
+Tangzhong: 1/4 cup (32 g) all-purpose flour
+Dough: 3 1/2 cups (460 g) all-purpose flour
+Dough: 1/3 cup (66 g) granulated sugar
+Dough: 2 teaspoons instant yeast
+Dough: 3/4 teaspoon fine sea salt
+Dough: 1/2 cup (110 g) whole milk, room temperature
+Dough: 1 (50 g) large egg, room temperature
+Dough: 1 teaspoon vanilla extract
+Dough: 4 tbsp (56 g) unsalted butter, softened
+Filling: 1/2 cup (113 g) unsalted butter, room temperature
+Filling: 1/2 cup (100 g) light or dark brown sugar
+Filling: 1 teaspoon ground cinnamon
+Topping: 6 tbsp (84 g) unsalted butter, melted
+Topping: 3/4 cup + 1 tbsp (100 g) all-purpose flour
+Topping: 1/2 cup (100 g) granulated sugar
+Topping: 2 tbsp (25 g) light brown sugar, packed
+Topping: 1/2 teaspoon ground cinnamon
+Frosting: 4 tbsp (56 g) unsalted butter, room temperature
+Frosting: 2 oz cream cheese, room temperature
+Frosting: 1 cup (100 g) powdered sugar
+Frosting: 2 1/2 tablespoons heavy cream
+#STEP
+Cook the cubed peaches, sugar and lemon juice over medium heat until juicy and thick, stir in the cornstarch slurry, cook 2 minutes more and cool completely.
+Whisk the tangzhong water and flour in a small pot over medium heat until it becomes a thick paste; set aside.
+In a stand mixer combine the flour, sugar, yeast and salt, add the egg, milk, vanilla and tangzhong, and knead on low into a shaggy ball.
+Add the softened butter a tablespoon at a time, then knead 10-11 minutes until smooth and elastic, adjusting with a little flour or milk if needed.
+Shape into a ball, cover in a buttered bowl and let rise somewhere warm about 1 hour until doubled.
+Line a 9x13 metal pan with parchment and beat the filling butter, brown sugar and cinnamon until smooth.
+Roll the dough to an 18x15-inch rectangle, spread the brown sugar filling over it leaving a 1/2-inch bare strip along the far edge, then spread on the cooled jam and lay the thin peach slices across.
+Cut 12 strips about 1 1/2 inches wide, roll each up and set them in the pan.
+Cover and let rise about 60 minutes until doubled, heating the oven to 325F (162C) meanwhile.
+Rub the topping ingredients together until crumbly and chill until needed.
+Scatter the crumb over the rolls and bake 30-35 minutes until golden (center at least 190F), then cool on a rack.
+Beat the cream cheese, butter and powdered sugar smooth, stir in the cream, and spoon over the warm rolls.
 #NOTE
-Saved as a link only. Full recipe at the source.
+Leftovers keep airtight 3-5 days; reheat in the oven or microwave. Unbaked rolls freeze well: thaw overnight in the fridge and pick up at the second rise.
 
 @@ Chicken Caprese Bake | Dinner | fave | | 6 | 30 min |
 #ING

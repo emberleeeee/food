@@ -1,5 +1,5 @@
 import re, json, glob, sys
-sys.path.insert(0,'/home/claude/mp')
+import os; sys.path.insert(0,os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from match import keys_for_line
 from rules import RULES
 out=[]
