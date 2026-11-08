@@ -1,0 +1,3 @@
+# food.emilyblackwell.com is a personal site. Ask search engines not to crawl any of it.
+User-agent: *
+Disallow: /

@@ -18,6 +18,8 @@ source/            ← edit these
 build.sh           ← turns source/ into site/
 site/              ← what goes on the server (built; don't hand-edit index.html or recipes.json)
   index.html, data/recipes.json, import.php
+  .htaccess          tells search engines not to index the planner
+webroot/robots.txt ← uploaded to the root of food.emilyblackwell.com; asks search engines not to crawl the site
 .github/workflows/deploy.yml   builds and uploads site/ on every push to main
 ```
 

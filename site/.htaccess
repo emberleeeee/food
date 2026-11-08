@@ -1,0 +1,5 @@
+# Keep everything in the planner folder (page, recipe data, import helper)
+# out of search engines.
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow"
+</IfModule>

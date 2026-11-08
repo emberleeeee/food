@@ -39,8 +39,11 @@ jobs:
           fi
           sudo apt-get -qq update && sudo apt-get -qq install -y lftp
           # Uploads new and changed files only. Nothing on the server is deleted.
+          # robots.txt goes one folder up from the planner, the root of food.emilyblackwell.com.
+          SITE_ROOT=$(dirname "${SFTP_PATH%/}")
           lftp -u "$SFTP_USER","$SFTP_PASSWORD" "sftp://$SFTP_HOST" -e "
             set sftp:auto-confirm yes; set net:max-retries 2; set net:timeout 20;
             mkdir -p -f $SFTP_PATH;
             mirror --reverse --verbose --no-perms site/ $SFTP_PATH;
+            put -O $SITE_ROOT webroot/robots.txt;
             bye"
