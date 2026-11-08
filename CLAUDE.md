@@ -1,6 +1,6 @@
 # Pantry Planner: notes for Claude Code
 
-Personal recipe and meal planner for Emberlee, hosted at food.emilyblackwell.com/planner/ (IONOS shared hosting, PHP available, no Node on the server). A matching copy runs as a claude.ai artifact.
+Personal recipe and meal planner for Emberlee, hosted at the root of food.emilyblackwell.com (webspace folder `sites/food.emilyblackwell.com`; IONOS shared hosting, PHP available, no Node on the server). A matching copy runs as a claude.ai artifact.
 
 ## Build and check
 - Edit files in `source/` only. Run `./build.sh` to regenerate `site/index.html`, `site/data/recipes.json` and `dist/pantry-planner.html` (the claude.ai artifact build). Commit the rebuilt `site/` with the source change.

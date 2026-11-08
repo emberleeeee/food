@@ -43,8 +43,6 @@ jobs:
           HOST=$(clean "$SFTP_HOST" | sed -e 's#^sftp://##' -e 's#/*$##')
           USER_NAME=$(clean "$SFTP_USER")
           DEST=$(clean "$SFTP_PATH" | sed -e 's#^/*##' -e 's#/*$##')
-          # robots.txt goes one folder up from the planner, the root of food.emilyblackwell.com.
-          SITE_ROOT=$(dirname "$DEST")
           # The password never enters the command line: lftp reads it from LFTP_PASSWORD.
           export LFTP_PASSWORD="$(printf '%s' "$SFTP_PASSWORD" | tr -d '\r\n')"
           # Uploads new and changed files only. Nothing on the server is deleted.
@@ -52,5 +50,4 @@ jobs:
             set sftp:auto-confirm yes; set net:max-retries 2; set net:timeout 20;
             mkdir -p -f '$DEST';
             mirror --reverse --verbose --no-perms site/ '$DEST/';
-            put -O '$SITE_ROOT' webroot/robots.txt;
             bye"

@@ -1,6 +1,6 @@
 # Pantry Planner
 
-The recipe planner at **food.emilyblackwell.com/planner/**: what you can cook from your pantry, a week plan, a shopping list, your own recipes and recipe import.
+The recipe planner at **food.emilyblackwell.com**: what you can cook from your pantry, a week plan, a shopping list, your own recipes and recipe import.
 
 ## How it fits together
 
@@ -19,7 +19,7 @@ build.sh           ← turns source/ into site/
 site/              ← what goes on the server (built; don't hand-edit index.html or recipes.json)
   index.html, data/recipes.json, import.php
   .htaccess          tells search engines not to index the planner
-webroot/robots.txt ← uploaded to the root of food.emilyblackwell.com; asks search engines not to crawl the site
+  robots.txt         asks search engines not to crawl the site
 .github/workflows/deploy.yml   builds and uploads site/ on every push to main
 ```
 
@@ -28,13 +28,13 @@ Every push to `main` rebuilds the site and uploads `site/` to your IONOS webspac
 ## One-time setup: deploy secrets
 
 1. **Create an SFTP account in IONOS.** In your IONOS account go to *Hosting → SFTP & SSH* and create an account (SFTP is enough). Note the server name, username and password it shows.
-2. **Find the planner's folder path.** In *Domains & SSL*, check which webspace folder food.emilyblackwell.com points to (for example `/food`). The planner goes in a `planner` folder inside it, so the path would be `/food/planner`.
+2. **Find the planner's folder path.** In *Domains & SSL*, check which webspace folder food.emilyblackwell.com points to. It is `sites/food.emilyblackwell.com`, and the planner is served from that folder's root.
 3. **Add four secrets to this repo.** On GitHub open *Settings → Secrets and variables → Actions → New repository secret* and add:
    - `SFTP_HOST`: the server name, e.g. `access-5012345678.webspace-host.com`
    - `SFTP_USER`: the SFTP username
    - `SFTP_PASSWORD`: the SFTP password
-   - `SFTP_PATH`: the folder path from step 2, e.g. `/food/planner`
-4. **Run it.** Go to *Actions → Build and deploy to IONOS → Run workflow*. When it turns green, open food.emilyblackwell.com/planner/.
+   - `SFTP_PATH`: the folder path from step 2: `sites/food.emilyblackwell.com`
+4. **Run it.** Go to *Actions → Build and deploy to IONOS → Run workflow*. When it turns green, open food.emilyblackwell.com.
 
 ## Making changes with Claude Code
 
