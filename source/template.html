@@ -327,7 +327,6 @@ ol.steps li{margin-bottom:8px;font-size:14px}
         <label class="field" style="flex-direction:row;align-items:center;gap:8px">Eating
           <select id="people"><option value="1">just me</option><option value="2">2 people</option><option value="3">3 people</option></select></label>
         <span class="spacer"></span>
-        <button class="btn sm ghost" id="copyPlan">Copy week for Notion</button>
       </div>
       <div class="week" id="week"></div>
       <div class="card batch" id="batch"></div>
@@ -361,7 +360,7 @@ ol.steps li{margin-bottom:8px;font-size:14px}
     <!-- SHOP -->
     <section class="view" id="v-shop">
       <div class="row"><div><h2>Shopping list</h2><p class="lede" style="margin:0">What the week's plan needs that your pantry doesn't have, plus anything you've marked as running low.</p></div></div>
-      <div class="toolbar" style="margin-top:14px"><button class="btn" id="copyShop">Copy for Notion</button><button class="btn ghost" id="clearShop">Uncheck all</button></div>
+      <div class="toolbar" style="margin-top:14px"><button class="btn ghost" id="clearShop">Uncheck all</button></div>
       <div id="shopBody"></div>
     </section>
 
@@ -658,20 +657,6 @@ function renderCook(){
 }
 
 /* ---------- recipe modal ---------- */
-function notionMd(r){
-  const e=evalR(r); const L=[];
-  L.push(`# ${r.name}`);
-  if(r.p!=null) L.push(`> Per serving: ${r.kcal} kcal · ${r.p}g protein · ${r.c}g carbs · ${r.f}g fat · ${r.fi}g fiber${r.src==="Generated"?" (estimated by Claude; check in Cronometer)":""}`);
-  if(r.url) L.push(`**Source:** ${r.url}`);
-  L.push(`**Serves:** ${r.servings||"?"}  ·  **Method:** ${r.method_type||"-"}${timeLabel(r)?`  ·  **Time:** ${timeLabel(r)}`:""}${r.cook?`  ·  **Cook:** ${r.cook}`:""}${LEAN_LABEL[r.lean]?`  ·  **Profile:** ${LEAN_LABEL[r.lean]}`:""}`);
-  if(r.freezer) L.push(`**Freezer:** ${r.freezer}`);
-  L.push("","## Ingredients"); e.lines.forEach(x=>L.push(`- [ ] ${x.l}${x.note?` _(${x.note})_`:""}`));
-  if(r.steps&&r.steps.length){L.push("","## Method"); r.steps.forEach((s,i)=>L.push(`${i+1}. ${s}`));}
-  const pl=["bike","strength","rest"].map(t=>[t,plateFor(r,t)]).filter(x=>x[1]);
-  if(r.serve&&Object.keys(r.serve).length){L.push("","## Serving ideas","| Style | Serve |","|---|---|"); pl.forEach(([t,v])=>L.push(`| ${TYPE_LABEL[t]} | ${v.replace(/\|/g,"/")} |`));}
-  if(r.base) L.push("",`> ${r.base}`);
-  return L.join("\n");
-}
 async function copy(text,msg){try{await navigator.clipboard.writeText(text);toast(msg||"Copied");}catch(e){showText(text);}}
 function showText(text){openModal(`<button class="close" data-close>×</button><h2>Copy this</h2><p class="note">Your browser blocked the clipboard, so select all and copy.</p><textarea style="width:100%;height:340px;margin-top:10px;border:1px solid var(--line);border-radius:8px;padding:10px;background:var(--paper)" readonly>${esc(text)}</textarea>`);}
 function recipeHtml(r,opts={}){
@@ -782,12 +767,6 @@ function autoPlan(){
   }
   S.plan=plan; save(); render(); toast("Planned from what's on hand. Tap any slot to change it.");
 }
-function planMd(){
-  const L=["# Week plan",""];
-  L.push("| Day | Breakfast | Lunch | Dinner |","|---|---|---|---|");
-  DAYS.forEach((d,i)=>{const c=MEALS.map(([m])=>m==="d"&&S.out[i+"d"]?"Dinner out":(byId(S.plan[i+m])||{name:"-"}).name);L.push(`| ${d.d} | ${c.join(" | ")} |`);});
-  return L.join("\n");
-}
 
 /* ---------- shop ---------- */
 function shopItems(){
@@ -810,7 +789,6 @@ function renderShop(){
   if(swaps.length) h+=`<h3 style="margin:22px 0 8px">Covered by a swap</h3><p class="note" style="margin:0 0 8px">Not on the list, because your pantry has a stand-in. Buy the original if you'd rather.</p><div class="card shop">${swaps.map(s=>`<label><span style="width:13px"></span><span><span class="what">${esc(s.what)}</span><div class="why">${esc(s.note)} · ${esc([...s.for].join(", "))}</div></span></label>`).join("")}</div>`;
   $("#shopBody").innerHTML=h;
 }
-function shopMd(){const {need,low}=shopItems(); const L=["# Shopping list",""]; if(need.length){L.push("## For this week's plan");need.forEach(i=>L.push(`- [ ] ${i.what}${i.for.size?` (${[...i.for].join(", ")})`:""}`));} if(low.length){L.push("","## Running low");low.forEach(i=>L.push(`- [ ] ${i.what}`));} return L.join("\n");}
 
 /* ---------- pantry view ---------- */
 const PF={q:"",cat:"",stat:"",sort:"cat",dir:1};
@@ -1233,8 +1211,6 @@ $("#newRecipe").onclick=()=>openEditor();
 $("#importRecipe").onclick=openImport;
 $("#clearPlan").onclick=()=>{S.plan={};save();render();};
 $("#people").onchange=e=>{S.people=+e.target.value;save();render();};
-$("#copyPlan").onclick=()=>copy(planMd(),"Week copied for Notion");
-$("#copyShop").onclick=()=>copy(shopMd(),"List copied for Notion");
 $("#clearShop").onclick=()=>{S.shopChecked={};save();renderShop();};
 $("#addGroup").innerHTML=GROUPS.map(g=>`<option>${g}</option>`).join("");
 function addItem(){const n=$("#addName").value.trim(); if(!n)return; if(pantryItems().some(p=>p.n.toLowerCase()===n.toLowerCase())){toast("Already in your pantry");return;}
