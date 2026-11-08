@@ -69,7 +69,7 @@ LIB=[("Shakshuka",["eggs","crushed_tomatoes","onion","garlic","bell_pepper","fet
 for i,(n,ks,meal) in enumerate(LIB):
     out.append(dict(id="lib%d"%i,src="Your library",name=n,cuisine="",category="Library",meal=meal,method_type="",servings=4,time=0,cook="",
         freezer="",kcal=None,p=None,c=None,f=None,fi=None,lean="Any",req=[{"l":LAB[k][0],"k":[[k]]} for k in ks],steps=[],serve={},
-        base="Full recipe and macros live in your Notion recipe library.",note=""))
+        base="",note=""))
 # pantry
 pantry=[]
 for n in open("pantry.txt").read().strip().split("\n"):
