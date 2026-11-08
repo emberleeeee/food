@@ -38,12 +38,19 @@ jobs:
             echo "::error::Add the SFTP_HOST, SFTP_USER, SFTP_PASSWORD and SFTP_PATH secrets (see README)."; exit 1
           fi
           sudo apt-get -qq update && sudo apt-get -qq install -y lftp
-          # Uploads new and changed files only. Nothing on the server is deleted.
+          # Clean up pasted values: drop line breaks, surrounding spaces, an sftp:// prefix and slashes.
+          clean() { printf '%s' "$1" | tr -d '\r\n' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'; }
+          HOST=$(clean "$SFTP_HOST" | sed -e 's#^sftp://##' -e 's#/*$##')
+          USER_NAME=$(clean "$SFTP_USER")
+          DEST=$(clean "$SFTP_PATH" | sed -e 's#^/*##' -e 's#/*$##')
           # robots.txt goes one folder up from the planner, the root of food.emilyblackwell.com.
-          SITE_ROOT=$(dirname "${SFTP_PATH%/}")
-          lftp -u "$SFTP_USER","$SFTP_PASSWORD" "sftp://$SFTP_HOST" -e "
+          SITE_ROOT=$(dirname "$DEST")
+          # The password never enters the command line: lftp reads it from LFTP_PASSWORD.
+          export LFTP_PASSWORD="$(printf '%s' "$SFTP_PASSWORD" | tr -d '\r\n')"
+          # Uploads new and changed files only. Nothing on the server is deleted.
+          lftp --env-password -u "$USER_NAME" "sftp://$HOST" -e "
             set sftp:auto-confirm yes; set net:max-retries 2; set net:timeout 20;
-            mkdir -p -f $SFTP_PATH;
-            mirror --reverse --verbose --no-perms site/ $SFTP_PATH;
-            put -O $SITE_ROOT webroot/robots.txt;
+            mkdir -p -f '$DEST';
+            mirror --reverse --verbose --no-perms site/ '$DEST/';
+            put -O '$SITE_ROOT' webroot/robots.txt;
             bye"
